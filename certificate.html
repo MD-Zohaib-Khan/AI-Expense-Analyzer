@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Completion Certificate - LiveTalk Software House</title>
+
+    <!-- Google Fonts for Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS Variables based on Brand Identity */
+        :root {
+            --navy: #0B1B3D;       /* Deep Navy/Dark Blue */
+            --blue: #1E65F3;       /* Bright/Modern Blue */
+            --light-blue: #E8F0FE; /* Subtle Accent Blue */
+            --gray: #4A5568;       /* Soft Neutral Gray */
+            --text-dark: #2D3748;
+        }
+
+        /* Print and Page Setup */
+        @page {
+            size: A4 landscape;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #e2e8f0; /* Display background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+        }
+
+        /* Main Certificate Container */
+        .certificate-container {
+            width: 297mm;
+            height: 210mm;
+            background: #ffffff;
+            position: relative;
+            padding: 12mm;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+        /* Extremely Subtle Geometric Background */
+        .bg-shapes {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .shape {
+            position: absolute;
+            border: 1px solid rgba(30, 101, 243, 0.04);
+            border-radius: 50%;
+        }
+        .shape-1 {
+            width: 180mm; height: 180mm;
+            top: -60mm; left: -60mm;
+        }
+        .shape-2 {
+            width: 220mm; height: 220mm;
+            bottom: -100mm; right: -80mm;
+        }
+
+        /* Elegant Double Border */
+        .border-outer {
+            position: absolute;
+            top: 10mm; left: 10mm; right: 10mm; bottom: 10mm;
+            border: 1.5px solid var(--navy);
+            z-index: 2;
+            pointer-events: none;
+        }
+        .border-inner {
+            position: absolute;
+            top: 2.5mm; left: 2.5mm; right: 2.5mm; bottom: 2.5mm;
+            border: 0.75px solid var(--blue);
+            opacity: 0.6;
+        }
+
+        /* Subtle Geometric Corners */
+        .corner {
+            position: absolute;
+            width: 8mm;
+            height: 8mm;
+            border: 2px solid var(--navy);
+        }
+        .corner-tl { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+        .corner-tr { top: -2px; right: -2px; border-left: none; border-bottom: none; }
+        .corner-bl { bottom: -2px; left: -2px; border-right: none; border-top: none; }
+        .corner-br { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+
+        /* Content Layout */
+        .content {
+            position: relative;
+            z-index: 3;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 8mm 15mm;
+        }
+
+        /* Header / Logo */
+        .header {
+            text-align: center;
+            margin-bottom: 2mm;
+        }
+        .logo-placeholder {
+            max-height: 20mm;
+            max-width: 60mm;
+            object-fit: contain;
+            margin-bottom: 2mm;
+        }
+
+        /* Titles */
+        .title-section {
+            text-align: center;
+            margin-bottom: 4mm;
+        }
+        .subtitle {
+            font-size: 8.5pt;
+            letter-spacing: 3px;
+            color: var(--blue);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 2mm;
+        }
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24pt;
+            color: var(--navy);
+            margin: 0;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+        .title-accent-line {
+            width: 80mm;
+            height: 1.5px;
+            background: var(--blue);
+            margin: 4mm auto 0;
+            opacity: 0.7;
+        }
+
+        /* Body Content */
+        .body-section {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .greeting {
+            text-align: center;
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--navy);
+            letter-spacing: 1px;
+            margin-bottom: 5mm;
+        }
+
+        /* Structured Fill-in Fields */
+        .text-line {
+            text-align: center;
+            font-size: 10pt;
+            color: var(--gray);
+            margin-bottom: 3mm;
+        }
+
+        .fields-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 5mm;
+            margin-bottom: 4mm;
+        }
+        .field-group {
+            display: flex;
+            align-items: flex-end;
+        }
+        .field-label {
+            font-weight: 500;
+            color: var(--navy);
+            margin-right: 2mm;
+            font-size: 10pt;
+            white-space: nowrap;
+        }
+        .field-blank {
+            border-bottom: 1px solid var(--gray);
+            height: 5mm;
+            display: inline-block;
+        }
+
+        /* Specific Blank Widths */
+        .name-blank { width: 70mm; }
+        .reg-blank { width: 40mm; }
+        .sem-blank { width: 25mm; }
+        .prog-blank { width: 35mm; }
+        .dept-blank { width: 45mm; }
+        .date-blank { width: 35mm; }
+
+        .college-name {
+            text-align: center;
+            font-weight: 600;
+            color: var(--navy);
+            font-size: 10pt;
+            margin-bottom: 4mm;
+        }
+
+        .internship-period {
+            text-align: center;
+            margin: 4mm 0;
+        }
+        .period-title {
+            font-size: 8pt;
+            letter-spacing: 1.5px;
+            color: var(--blue);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 1mm;
+        }
+
+        /* Paragraphs */
+        .paragraphs {
+            margin-top: 2mm;
+        }
+        .paragraphs p {
+            font-size: 9.5pt;
+            line-height: 1.7;
+            color: var(--gray);
+            margin: 0 0 3mm 0;
+            text-align: justify;
+            text-align-last: center;
+        }
+
+        /* Footer & Signatures */
+        .footer-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: auto;
+            padding: 0 10mm;
+        }
+
+        .sig-block {
+            width: 55mm;
+            text-align: left;
+        }
+        .sig-block.right {
+            text-align: right;
+        }
+        .sig-line {
+            border-bottom: 1px solid var(--navy);
+            margin-bottom: 2mm;
+            width: 100%;
+        }
+        .sig-role {
+            font-weight: 600;
+            font-size: 9pt;
+            color: var(--navy);
+            margin-bottom: 3mm;
+        }
+        .sig-detail-group {
+            font-size: 8.5pt;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+        .sig-detail {
+            display: flex;
+            align-items: flex-end;
+        }
+        .detail-label {
+            margin-right: 2mm;
+            width: 26mm;
+        }
+        .detail-blank {
+            flex-grow: 1;
+            border-bottom: 1px solid #cbd5e1;
+            height: 4mm;
+        }
+        .mt-2 { margin-top: 2mm; }
+
+        .host-org {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 10.5pt;
+            color: var(--navy);
+        }
+
+        /* Stamp Area */
+        .stamp-block {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 32mm;
+            height: 32mm;
+            border: 1.2px dashed var(--blue);
+            border-radius: 50%;
+            opacity: 0.6;
+            margin: 0 10mm;
+        }
+        .stamp-text {
+            font-size: 7.5pt;
+            color: var(--blue);
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 0.5px;
+            padding: 2mm;
+        }
+
+        /* Subtle Footer Border */
+        .bottom-accent {
+            text-align: center;
+            margin-top: 5mm;
+        }
+        .bottom-line {
+            width: 20mm;
+            height: 1px;
+            background: var(--blue);
+            margin: 0 auto;
+            opacity: 0.4;
+        }
+
+        /* Print Specifics */
+        @media print {
+            body { background: none; min-height: auto; }
+            .certificate-container {
+                box-shadow: none;
+                width: 100%;
+                height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="certificate-container">
+        <!-- Minimal Geometric Background -->
+        <div class="bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+
+        <!-- Elegant Borders -->
+        <div class="border-outer">
+            <div class="corner corner-tl"></div>
+            <div class="corner corner-tr"></div>
+            <div class="corner corner-bl"></div>
+            <div class="corner corner-br"></div>
+            <div class="border-inner"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+
+            <!-- Header -->
+            <div class="header">
+                <!-- IMPORTANT: Replace the 'src' below with your actual logo file path -->
+                <!-- e.g. src="livetalk-logo.png" -->
+                <img src="https://via.placeholder.com/300x100/ffffff/0B1B3D?text=[+INSERT+LIVETALK+LOGO+HERE+]" alt="LiveTalk Software House Logo" class="logo-placeholder">
+            </div>
+
+            <!-- Title -->
+            <div class="title-section">
+                <div class="subtitle">Certificate of Achievement</div>
+                <h1 class="main-title">INTERNSHIP COMPLETION CERTIFICATE</h1>
+                <div class="title-accent-line"></div>
+            </div>
+
+            <!-- Body -->
+            <div class="body-section">
+                <div class="greeting">TO WHOM IT MAY CONCERN</div>
+
+                <!-- Structured First Paragraph for clear manual/digital filling -->
+                <div class="text-line">This is to certify that</div>
+
+                <div class="fields-container">
+                    <div class="field-group">
+                        <span class="field-label">Mr./Ms.</span>
+                        <span class="field-blank name-blank"></span>
+                    </div>
+                    <div class="field-group">
+                        <span class="field-label">Registration No.</span>
+                        <span class="field-blank reg-blank"></span>
+                    </div>
+                </div>
+
+                <div class="text-line">a student of</div>
+
+                <div class="fields-container">
+                    <div class="field-group">
+                        <span class="field-label">Semester:</span>
+                        <span class="field-blank sem-blank"></span>
+                    </div>
+                    <div class="field-group">
+                        <span class="field-label">BS Program:</span>
+                        <span class="field-blank prog-blank"></span>
+                    </div>
+                    <div class="field-group">
+                        <span class="field-label">Department:</span>
+                        <span class="field-blank dept-blank"></span>
+                    </div>
+                </div>
+
+                <div class="college-name">Govt. Postgraduate College Kohat</div>
+
+                <div class="text-line">has successfully completed a 9 weeks mandatory internship at LiveTalk Software House.</div>
+
+                <div class="internship-period">
+                    <span class="period-title">INTERNSHIP PERIOD</span>
+                    <div class="fields-container" style="margin-bottom: 0;">
+                        <div class="field-group">
+                            <span class="field-label">From:</span>
+                            <span class="field-blank date-blank"></span>
+                        </div>
+                        <div class="field-group">
+                            <span class="field-label">To:</span>
+                            <span class="field-blank date-blank"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Descriptive Paragraphs exactly as requested -->
+                <div class="paragraphs">
+                    <p>
+                        During the internship period, the student remained associated with our organization and participated in various activities related to his/her field of study. He/She performed the assigned tasks with commitment, punctuality, and a positive attitude and gained practical exposure to the professional working environment.
+                    </p>
+                    <p>
+                        Throughout the internship, his/her conduct and performance were found to be satisfactory.
+                    </p>
+                    <p>
+                        We wish him/her success in future academic and professional endeavors.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer / Signatures -->
+            <div class="footer-section">
+                <!-- Left: Supervisor -->
+                <div class="sig-block">
+                    <div class="sig-line"></div>
+                    <div class="sig-role">Authorized Officer / Supervisor</div>
+                    <div class="sig-detail-group">
+                        <div class="sig-detail">
+                            <span class="detail-label">Name:</span>
+                            <span class="detail-blank"></span>
+                        </div>
+                        <div class="sig-detail">
+                            <span class="detail-label">Designation:</span>
+                            <span class="detail-blank"></span>
+                        </div>
+                        <div class="sig-detail mt-2">
+                            <span class="detail-label">Date of Issue:</span>
+                            <span class="detail-blank"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Center: Stamp -->
+                <div class="stamp-block">
+                    <div class="stamp-text">OFFICIAL STAMP / SEAL</div>
+                </div>
+
+                <!-- Right: Organization -->
+                <div class="sig-block right">
+                    <div class="sig-line"></div>
+                    <div class="sig-role">Host Organization</div>
+                    <div class="host-org">LiveTalk Software House</div>
+                </div>
+            </div>
+
+            <div class="bottom-accent">
+                <div class="bottom-line"></div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
