@@ -65,15 +65,16 @@
         .shape {
             position: absolute;
             border: 1px solid rgba(30, 101, 243, 0.04);
-            border-radius: 50%;
         }
         .shape-1 {
             width: 180mm; height: 180mm;
             top: -60mm; left: -60mm;
+            border-radius: 50% 50% 50% 15%;
         }
         .shape-2 {
             width: 220mm; height: 220mm;
             bottom: -100mm; right: -80mm;
+            border-radius: 50% 50% 15% 50%;
         }
 
         /* Elegant Double Border */
@@ -96,7 +97,7 @@
             position: absolute;
             width: 8mm;
             height: 8mm;
-            border: 2px solid var(--navy);
+            border: 2px solid var(--blue);
         }
         .corner-tl { top: -2px; left: -2px; border-right: none; border-bottom: none; }
         .corner-tr { top: -2px; right: -2px; border-left: none; border-bottom: none; }
@@ -122,6 +123,12 @@
             max-height: 20mm;
             max-width: 60mm;
             object-fit: contain;
+            margin-bottom: 2mm;
+        }
+        .company-name {
+            font-weight: 600;
+            font-size: 14pt;
+            color: var(--navy);
             margin-bottom: 2mm;
         }
 
@@ -204,7 +211,15 @@
         }
 
         /* Specific Blank Widths */
-        .name-blank { width: 70mm; }
+        .name-blank {
+            width: 70mm;
+            font-size: 14pt;
+            font-weight: 600;
+        }
+        .name-label {
+            font-size: 14pt;
+            font-weight: 600;
+        }
         .reg-blank { width: 40mm; }
         .sem-blank { width: 25mm; }
         .prog-blank { width: 35mm; }
@@ -370,6 +385,7 @@
                 <!-- IMPORTANT: Replace the 'src' below with your actual logo file path -->
                 <!-- e.g. src="livetalk-logo.png" -->
                 <img src="https://via.placeholder.com/300x100/ffffff/0B1B3D?text=[+INSERT+LIVETALK+LOGO+HERE+]" alt="LiveTalk Software House Logo" class="logo-placeholder">
+                <div class="company-name">LiveTalk Software House</div>
             </div>
 
             <!-- Title -->
@@ -388,7 +404,7 @@
 
                 <div class="fields-container">
                     <div class="field-group">
-                        <span class="field-label">Mr./Ms.</span>
+                        <span class="field-label name-label">Mr./Ms.</span>
                         <span class="field-blank name-blank"></span>
                     </div>
                     <div class="field-group">
