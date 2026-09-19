@@ -61,19 +61,12 @@
             top: 0; left: 0; right: 0; bottom: 0;
             z-index: 1;
             pointer-events: none;
+            overflow: hidden;
         }
-        .shape {
+        .bg-shapes svg {
             position: absolute;
-            border: 1px solid rgba(30, 101, 243, 0.04);
-            border-radius: 50%;
-        }
-        .shape-1 {
-            width: 180mm; height: 180mm;
-            top: -60mm; left: -60mm;
-        }
-        .shape-2 {
-            width: 220mm; height: 220mm;
-            bottom: -100mm; right: -80mm;
+            width: 100%;
+            height: 100%;
         }
 
         /* Elegant Double Border */
@@ -204,7 +197,15 @@
         }
 
         /* Specific Blank Widths */
-        .name-blank { width: 70mm; }
+        .name-blank {
+            width: 80mm;
+            border-bottom: 1.5px solid var(--navy);
+            font-family: 'Playfair Display', serif;
+            font-size: 14pt;
+            font-weight: 700;
+            color: var(--navy);
+            text-align: center;
+        }
         .reg-blank { width: 40mm; }
         .sem-blank { width: 25mm; }
         .prog-blank { width: 35mm; }
@@ -304,8 +305,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 32mm;
-            height: 32mm;
+            width: 45mm;
+            height: 45mm;
             border: 1.2px dashed var(--blue);
             border-radius: 50%;
             opacity: 0.6;
@@ -347,10 +348,17 @@
 <body>
 
     <div class="certificate-container">
-        <!-- Minimal Geometric Background -->
+        <!-- Minimal Geometric Background (Speech Bubble Inspired) -->
         <div class="bg-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
+            <svg viewBox="0 0 297 210" xmlns="http://www.w3.org/2000/svg">
+                <!-- Top Left Speech Bubble Abstract -->
+                <path d="M-20 -20 L80 -20 Q100 -20 100 0 L100 60 Q100 80 80 80 L30 80 L0 100 L0 80 Q-20 80 -20 60 Z" fill="none" stroke="rgba(30, 101, 243, 0.04)" stroke-width="0.5"/>
+                <!-- Bottom Right Speech Bubble Abstract -->
+                <path d="M320 230 L220 230 Q200 230 200 210 L200 150 Q200 130 220 130 L270 130 L300 110 L300 130 Q320 130 320 150 Z" fill="none" stroke="rgba(30, 101, 243, 0.04)" stroke-width="0.5"/>
+                <!-- Additional subtle curves -->
+                <path d="M-10 100 Q 50 120 120 230" fill="none" stroke="rgba(30, 101, 243, 0.02)" stroke-width="0.3"/>
+                <path d="M150 -10 Q 250 80 320 60" fill="none" stroke="rgba(30, 101, 243, 0.02)" stroke-width="0.3"/>
+            </svg>
         </div>
 
         <!-- Elegant Borders -->
@@ -483,6 +491,7 @@
 
             <div class="bottom-accent">
                 <div class="bottom-line"></div>
+                <div style="font-size: 8pt; color: var(--gray); margin-top: 2mm; letter-spacing: 1px; font-weight: 500;">LIVETALK SOFTWARE HOUSE | INTERNSHIP COMPLETION CERTIFICATE</div>
             </div>
 
         </div>
