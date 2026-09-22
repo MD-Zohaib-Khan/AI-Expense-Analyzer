@@ -204,7 +204,7 @@
         }
 
         /* Specific Blank Widths */
-        .name-blank { width: 70mm; }
+        .name-blank { width: 90mm; }
         .reg-blank { width: 40mm; }
         .sem-blank { width: 25mm; }
         .prog-blank { width: 35mm; }
@@ -255,7 +255,7 @@
         }
 
         .sig-block {
-            width: 55mm;
+            width: 65mm;
             text-align: left;
         }
         .sig-block.right {
@@ -279,14 +279,15 @@
         }
         .sig-detail {
             display: flex;
-            align-items: flex-end;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1mm;
         }
         .detail-label {
-            margin-right: 2mm;
-            width: 26mm;
+            white-space: nowrap;
         }
         .detail-blank {
-            flex-grow: 1;
+            width: 100%;
             border-bottom: 1px solid #cbd5e1;
             height: 4mm;
         }
@@ -370,6 +371,7 @@
                 <!-- IMPORTANT: Replace the 'src' below with your actual logo file path -->
                 <!-- e.g. src="livetalk-logo.png" -->
                 <img src="https://via.placeholder.com/300x100/ffffff/0B1B3D?text=[+INSERT+LIVETALK+LOGO+HERE+]" alt="LiveTalk Software House Logo" class="logo-placeholder">
+                <div class="host-org-header" style="margin-top: 2mm; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14pt; color: var(--navy);">LiveTalk Software House</div>
             </div>
 
             <!-- Title -->
@@ -416,7 +418,7 @@
 
                 <div class="college-name">Govt. Postgraduate College Kohat</div>
 
-                <div class="text-line">has successfully completed a 9 weeks mandatory internship at LiveTalk Software House.</div>
+                <div class="text-line">has successfully completed a 9 weeks mandatory internship at LiveTalk Software House</div>
 
                 <div class="internship-period">
                     <span class="period-title">INTERNSHIP PERIOD</span>
@@ -454,7 +456,7 @@
                     <div class="sig-role">Authorized Officer / Supervisor</div>
                     <div class="sig-detail-group">
                         <div class="sig-detail">
-                            <span class="detail-label">Name:</span>
+                            <span class="detail-label">Name of Authorized Officer/Supervisor:</span>
                             <span class="detail-blank"></span>
                         </div>
                         <div class="sig-detail">
@@ -483,6 +485,7 @@
 
             <div class="bottom-accent">
                 <div class="bottom-line"></div>
+                <div class="footer-text" style="font-size: 8pt; color: var(--gray); margin-top: 2mm; letter-spacing: 1px;">Internship Completion Certificate</div>
             </div>
 
         </div>
