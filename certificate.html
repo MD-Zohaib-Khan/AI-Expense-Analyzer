@@ -64,7 +64,7 @@
         }
         .shape {
             position: absolute;
-            border: 1px solid rgba(30, 101, 243, 0.04);
+            border: 1px solid rgba(30, 101, 243, 0.06);
             border-radius: 50%;
         }
         .shape-1 {
@@ -74,6 +74,22 @@
         .shape-2 {
             width: 220mm; height: 220mm;
             bottom: -100mm; right: -80mm;
+        }
+        .shape-speech {
+            position: absolute;
+            width: 120mm; height: 120mm;
+            border: 1px solid rgba(30, 101, 243, 0.04);
+            border-radius: 50% 50% 50% 10%;
+            top: -20mm; right: -20mm;
+            transform: rotate(-15deg);
+        }
+        .shape-speech-2 {
+            position: absolute;
+            width: 100mm; height: 100mm;
+            border: 1px solid rgba(30, 101, 243, 0.04);
+            border-radius: 50% 50% 10% 50%;
+            bottom: -20mm; left: -20mm;
+            transform: rotate(15deg);
         }
 
         /* Elegant Double Border */
@@ -351,6 +367,8 @@
         <div class="bg-shapes">
             <div class="shape shape-1"></div>
             <div class="shape shape-2"></div>
+            <div class="shape-speech"></div>
+            <div class="shape-speech-2"></div>
         </div>
 
         <!-- Elegant Borders -->
@@ -374,7 +392,7 @@
 
             <!-- Title -->
             <div class="title-section">
-                <div class="subtitle">Certificate of Achievement</div>
+                <div class="subtitle">CERTIFICATE OF ACHIEVEMENT</div>
                 <h1 class="main-title">INTERNSHIP COMPLETION CERTIFICATE</h1>
                 <div class="title-accent-line"></div>
             </div>
@@ -383,64 +401,25 @@
             <div class="body-section">
                 <div class="greeting">TO WHOM IT MAY CONCERN</div>
 
-                <!-- Structured First Paragraph for clear manual/digital filling -->
-                <div class="text-line">This is to certify that</div>
+                <div class="paragraphs" style="text-align: center;">
+                    <p style="text-align: center; text-align-last: center; line-height: 2;">
+                        This is to certify that Mr./Ms. <span class="field-blank name-blank"></span>,<br>
+                        Registration No. <span class="field-blank reg-blank"></span>, a student of<br>
+                        <span class="field-blank sem-blank"></span> Semester BS <span class="field-blank prog-blank"></span><br>
+                        Department, Govt. Postgraduate College Kohat, has successfully<br>
+                        completed a 9 weeks mandatory internship at LiveTalk Software House<br>
+                        from <span class="field-blank date-blank"></span> to <span class="field-blank date-blank"></span>.
+                    </p>
 
-                <div class="fields-container">
-                    <div class="field-group">
-                        <span class="field-label">Mr./Ms.</span>
-                        <span class="field-blank name-blank"></span>
-                    </div>
-                    <div class="field-group">
-                        <span class="field-label">Registration No.</span>
-                        <span class="field-blank reg-blank"></span>
-                    </div>
-                </div>
-
-                <div class="text-line">a student of</div>
-
-                <div class="fields-container">
-                    <div class="field-group">
-                        <span class="field-label">Semester:</span>
-                        <span class="field-blank sem-blank"></span>
-                    </div>
-                    <div class="field-group">
-                        <span class="field-label">BS Program:</span>
-                        <span class="field-blank prog-blank"></span>
-                    </div>
-                    <div class="field-group">
-                        <span class="field-label">Department:</span>
-                        <span class="field-blank dept-blank"></span>
-                    </div>
-                </div>
-
-                <div class="college-name">Govt. Postgraduate College Kohat</div>
-
-                <div class="text-line">has successfully completed a 9 weeks mandatory internship at LiveTalk Software House.</div>
-
-                <div class="internship-period">
-                    <span class="period-title">INTERNSHIP PERIOD</span>
-                    <div class="fields-container" style="margin-bottom: 0;">
-                        <div class="field-group">
-                            <span class="field-label">From:</span>
-                            <span class="field-blank date-blank"></span>
-                        </div>
-                        <div class="field-group">
-                            <span class="field-label">To:</span>
-                            <span class="field-blank date-blank"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Descriptive Paragraphs exactly as requested -->
-                <div class="paragraphs">
-                    <p>
+                    <p style="text-align: center; text-align-last: center; margin-top: 4mm;">
                         During the internship period, the student remained associated with our organization and participated in various activities related to his/her field of study. He/She performed the assigned tasks with commitment, punctuality, and a positive attitude and gained practical exposure to the professional working environment.
                     </p>
-                    <p>
+
+                    <p style="text-align: center; text-align-last: center;">
                         Throughout the internship, his/her conduct and performance were found to be satisfactory.
                     </p>
-                    <p>
+
+                    <p style="text-align: center; text-align-last: center;">
                         We wish him/her success in future academic and professional endeavors.
                     </p>
                 </div>
@@ -462,7 +441,7 @@
                             <span class="detail-blank"></span>
                         </div>
                         <div class="sig-detail mt-2">
-                            <span class="detail-label">Date of Issue:</span>
+                            <span class="detail-label" style="width: auto; margin-right: 2mm;">Date of Issue:</span>
                             <span class="detail-blank"></span>
                         </div>
                     </div>
