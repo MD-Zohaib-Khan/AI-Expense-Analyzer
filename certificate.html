@@ -116,19 +116,26 @@
         /* Header / Logo */
         .header {
             text-align: center;
-            margin-bottom: 2mm;
+            margin-bottom: 1mm;
         }
         .logo-placeholder {
-            max-height: 20mm;
+            max-height: 16mm;
             max-width: 60mm;
             object-fit: contain;
-            margin-bottom: 2mm;
+            margin-bottom: 1mm;
+        }
+        .org-name {
+            font-size: 14pt;
+            font-weight: 600;
+            color: var(--navy);
+            letter-spacing: 1px;
+            margin-bottom: 1mm;
         }
 
         /* Titles */
         .title-section {
             text-align: center;
-            margin-bottom: 4mm;
+            margin-bottom: 2mm;
         }
         .subtitle {
             font-size: 8.5pt;
@@ -168,7 +175,7 @@
             font-weight: 600;
             color: var(--navy);
             letter-spacing: 1px;
-            margin-bottom: 5mm;
+            margin-bottom: 3mm;
         }
 
         /* Structured Fill-in Fields */
@@ -176,7 +183,7 @@
             text-align: center;
             font-size: 10pt;
             color: var(--gray);
-            margin-bottom: 3mm;
+            margin-bottom: 2mm;
         }
 
         .fields-container {
@@ -184,7 +191,7 @@
             justify-content: center;
             align-items: flex-end;
             gap: 5mm;
-            margin-bottom: 4mm;
+            margin-bottom: 2mm;
         }
         .field-group {
             display: flex;
@@ -203,8 +210,22 @@
             display: inline-block;
         }
 
+        .name-label {
+            font-weight: 600;
+            color: var(--navy);
+            margin-right: 2mm;
+            font-size: 12pt;
+            white-space: nowrap;
+        }
+
+        .name-blank {
+            border-bottom: 1px solid var(--gray);
+            height: 6mm;
+            display: inline-block;
+            width: 90mm;
+        }
+
         /* Specific Blank Widths */
-        .name-blank { width: 70mm; }
         .reg-blank { width: 40mm; }
         .sem-blank { width: 25mm; }
         .prog-blank { width: 35mm; }
@@ -221,7 +242,7 @@
 
         .internship-period {
             text-align: center;
-            margin: 4mm 0;
+            margin: 2mm 0;
         }
         .period-title {
             font-size: 8pt;
@@ -283,7 +304,6 @@
         }
         .detail-label {
             margin-right: 2mm;
-            width: 26mm;
         }
         .detail-blank {
             flex-grow: 1;
@@ -329,8 +349,13 @@
             width: 20mm;
             height: 1px;
             background: var(--blue);
-            margin: 0 auto;
+            margin: 0 auto 2mm auto;
             opacity: 0.4;
+        }
+        .footer-text {
+            font-size: 7.5pt;
+            color: var(--gray);
+            letter-spacing: 0.5px;
         }
 
         /* Print Specifics */
@@ -370,6 +395,7 @@
                 <!-- IMPORTANT: Replace the 'src' below with your actual logo file path -->
                 <!-- e.g. src="livetalk-logo.png" -->
                 <img src="https://via.placeholder.com/300x100/ffffff/0B1B3D?text=[+INSERT+LIVETALK+LOGO+HERE+]" alt="LiveTalk Software House Logo" class="logo-placeholder">
+                <div class="org-name">LiveTalk Software House</div>
             </div>
 
             <!-- Title -->
@@ -388,8 +414,8 @@
 
                 <div class="fields-container">
                     <div class="field-group">
-                        <span class="field-label">Mr./Ms.</span>
-                        <span class="field-blank name-blank"></span>
+                        <span class="name-label">Mr./Ms.</span>
+                        <span class="name-blank"></span>
                     </div>
                     <div class="field-group">
                         <span class="field-label">Registration No.</span>
@@ -449,19 +475,19 @@
             <!-- Footer / Signatures -->
             <div class="footer-section">
                 <!-- Left: Supervisor -->
-                <div class="sig-block">
+                <div class="sig-block" style="width: 85mm;">
                     <div class="sig-line"></div>
                     <div class="sig-role">Authorized Officer / Supervisor</div>
                     <div class="sig-detail-group">
                         <div class="sig-detail">
-                            <span class="detail-label">Name:</span>
+                            <span class="detail-label">Name of Authorized Officer/Supervisor:</span>
                             <span class="detail-blank"></span>
                         </div>
                         <div class="sig-detail">
                             <span class="detail-label">Designation:</span>
                             <span class="detail-blank"></span>
                         </div>
-                        <div class="sig-detail mt-2">
+                        <div class="sig-detail">
                             <span class="detail-label">Date of Issue:</span>
                             <span class="detail-blank"></span>
                         </div>
@@ -483,6 +509,7 @@
 
             <div class="bottom-accent">
                 <div class="bottom-line"></div>
+                <div class="footer-text">LiveTalk Software House - Internship Completion Certificate</div>
             </div>
 
         </div>
