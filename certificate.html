@@ -64,16 +64,20 @@
         }
         .shape {
             position: absolute;
-            border: 1px solid rgba(30, 101, 243, 0.04);
-            border-radius: 50%;
+            border: 1.5px solid rgba(30, 101, 243, 0.05);
+            background: rgba(30, 101, 243, 0.01);
         }
         .shape-1 {
             width: 180mm; height: 180mm;
             top: -60mm; left: -60mm;
+            border-radius: 50% 50% 10mm 50%; /* Subtle speech bubble pointing bottom-right */
+            transform: rotate(-10deg);
         }
         .shape-2 {
             width: 220mm; height: 220mm;
             bottom: -100mm; right: -80mm;
+            border-radius: 10mm 50% 50% 50%; /* Subtle speech bubble pointing top-left */
+            transform: rotate(10deg);
         }
 
         /* Elegant Double Border */
@@ -122,7 +126,14 @@
             max-height: 20mm;
             max-width: 60mm;
             object-fit: contain;
-            margin-bottom: 2mm;
+            margin-bottom: 1mm;
+        }
+        .header-org-name {
+            font-size: 11pt;
+            font-weight: 500;
+            color: var(--navy);
+            letter-spacing: 1px;
+            margin-top: 1mm;
         }
 
         /* Titles */
@@ -197,6 +208,13 @@
             font-size: 10pt;
             white-space: nowrap;
         }
+
+        /* Emphasize the student's name label slightly */
+        .name-group .field-label {
+            font-size: 11pt;
+            font-weight: 600;
+        }
+
         .field-blank {
             border-bottom: 1px solid var(--gray);
             height: 5mm;
@@ -204,7 +222,10 @@
         }
 
         /* Specific Blank Widths */
-        .name-blank { width: 70mm; }
+        .name-blank {
+            width: 85mm;
+            border-bottom: 1.5px solid var(--navy); /* Make name field more prominent */
+        }
         .reg-blank { width: 40mm; }
         .sem-blank { width: 25mm; }
         .prog-blank { width: 35mm; }
@@ -230,6 +251,7 @@
             font-weight: 600;
             display: block;
             margin-bottom: 1mm;
+            text-transform: uppercase;
         }
 
         /* Paragraphs */
@@ -255,10 +277,11 @@
         }
 
         .sig-block {
-            width: 55mm;
+            width: 75mm; /* Widened for long labels */
             text-align: left;
         }
         .sig-block.right {
+            width: 60mm;
             text-align: right;
         }
         .sig-line {
@@ -280,17 +303,19 @@
         .sig-detail {
             display: flex;
             align-items: flex-end;
+            margin-bottom: 1.5mm;
         }
         .detail-label {
             margin-right: 2mm;
-            width: 26mm;
+            white-space: nowrap;
+            color: var(--navy);
         }
         .detail-blank {
             flex-grow: 1;
             border-bottom: 1px solid #cbd5e1;
             height: 4mm;
+            min-width: 15mm;
         }
-        .mt-2 { margin-top: 2mm; }
 
         .host-org {
             font-family: 'Playfair Display', serif;
@@ -332,6 +357,13 @@
             margin: 0 auto;
             opacity: 0.4;
         }
+        .footer-text {
+            font-size: 7.5pt;
+            color: var(--gray);
+            margin-top: 2mm;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
 
         /* Print Specifics */
         @media print {
@@ -367,9 +399,8 @@
 
             <!-- Header -->
             <div class="header">
-                <!-- IMPORTANT: Replace the 'src' below with your actual logo file path -->
-                <!-- e.g. src="livetalk-logo.png" -->
                 <img src="https://via.placeholder.com/300x100/ffffff/0B1B3D?text=[+INSERT+LIVETALK+LOGO+HERE+]" alt="LiveTalk Software House Logo" class="logo-placeholder">
+                <div class="header-org-name">LiveTalk Software House</div>
             </div>
 
             <!-- Title -->
@@ -383,11 +414,11 @@
             <div class="body-section">
                 <div class="greeting">TO WHOM IT MAY CONCERN</div>
 
-                <!-- Structured First Paragraph for clear manual/digital filling -->
+                <!-- Structured First Paragraph -->
                 <div class="text-line">This is to certify that</div>
 
                 <div class="fields-container">
-                    <div class="field-group">
+                    <div class="field-group name-group">
                         <span class="field-label">Mr./Ms.</span>
                         <span class="field-blank name-blank"></span>
                     </div>
@@ -414,9 +445,9 @@
                     </div>
                 </div>
 
-                <div class="college-name">Govt. Postgraduate College Kohat</div>
+                <div class="college-name">Govt. Postgraduate College Kohat,</div>
 
-                <div class="text-line">has successfully completed a 9 weeks mandatory internship at LiveTalk Software House.</div>
+                <div class="text-line">has successfully completed a 9 weeks mandatory internship at LiveTalk Software House</div>
 
                 <div class="internship-period">
                     <span class="period-title">INTERNSHIP PERIOD</span>
@@ -454,14 +485,14 @@
                     <div class="sig-role">Authorized Officer / Supervisor</div>
                     <div class="sig-detail-group">
                         <div class="sig-detail">
-                            <span class="detail-label">Name:</span>
+                            <span class="detail-label">Name of Authorized Officer/Supervisor:</span>
                             <span class="detail-blank"></span>
                         </div>
                         <div class="sig-detail">
                             <span class="detail-label">Designation:</span>
                             <span class="detail-blank"></span>
                         </div>
-                        <div class="sig-detail mt-2">
+                        <div class="sig-detail">
                             <span class="detail-label">Date of Issue:</span>
                             <span class="detail-blank"></span>
                         </div>
@@ -483,6 +514,7 @@
 
             <div class="bottom-accent">
                 <div class="bottom-line"></div>
+                <div class="footer-text">Internship Completion Certificate</div>
             </div>
 
         </div>
