@@ -64,16 +64,19 @@
         }
         .shape {
             position: absolute;
-            border: 1px solid rgba(30, 101, 243, 0.04);
-            border-radius: 50%;
+            border: 1px solid rgba(30, 101, 243, 0.05);
+            border-radius: 50% 50% 50% 0; /* Abstract speech bubble shape */
         }
         .shape-1 {
             width: 180mm; height: 180mm;
             top: -60mm; left: -60mm;
+            transform: rotate(-15deg);
         }
         .shape-2 {
             width: 220mm; height: 220mm;
             bottom: -100mm; right: -80mm;
+            border-radius: 50% 50% 0 50%; /* Flipped speech bubble */
+            transform: rotate(15deg);
         }
 
         /* Elegant Double Border */
@@ -96,7 +99,7 @@
             position: absolute;
             width: 8mm;
             height: 8mm;
-            border: 2px solid var(--navy);
+            border: 2px solid var(--blue);
         }
         .corner-tl { top: -2px; left: -2px; border-right: none; border-bottom: none; }
         .corner-tr { top: -2px; right: -2px; border-left: none; border-bottom: none; }
@@ -123,6 +126,14 @@
             max-width: 60mm;
             object-fit: contain;
             margin-bottom: 2mm;
+        }
+        .org-name-under-logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--navy);
+            margin: 0;
+            letter-spacing: 0.5px;
         }
 
         /* Titles */
@@ -370,6 +381,7 @@
                 <!-- IMPORTANT: Replace the 'src' below with your actual logo file path -->
                 <!-- e.g. src="livetalk-logo.png" -->
                 <img src="https://via.placeholder.com/300x100/ffffff/0B1B3D?text=[+INSERT+LIVETALK+LOGO+HERE+]" alt="LiveTalk Software House Logo" class="logo-placeholder">
+                <div class="org-name-under-logo">LiveTalk Software House</div>
             </div>
 
             <!-- Title -->
@@ -416,7 +428,7 @@
 
                 <div class="college-name">Govt. Postgraduate College Kohat</div>
 
-                <div class="text-line">has successfully completed a 9 weeks mandatory internship at LiveTalk Software House.</div>
+                <div class="text-line">has successfully completed a 9 weeks mandatory internship at LiveTalk Software House</div>
 
                 <div class="internship-period">
                     <span class="period-title">INTERNSHIP PERIOD</span>
