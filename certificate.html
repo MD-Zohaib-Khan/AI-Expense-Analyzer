@@ -62,19 +62,6 @@
             z-index: 1;
             pointer-events: none;
         }
-        .shape {
-            position: absolute;
-            border: 1px solid rgba(30, 101, 243, 0.04);
-            border-radius: 50%;
-        }
-        .shape-1 {
-            width: 180mm; height: 180mm;
-            top: -60mm; left: -60mm;
-        }
-        .shape-2 {
-            width: 220mm; height: 220mm;
-            bottom: -100mm; right: -80mm;
-        }
 
         /* Elegant Double Border */
         .border-outer {
@@ -110,25 +97,24 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            padding: 8mm 15mm;
+            padding: 15mm 20mm 15mm 20mm;
+            box-sizing: border-box;
         }
 
         /* Header / Logo */
         .header {
             text-align: center;
-            margin-bottom: 2mm;
+            margin-bottom: 5mm;
         }
         .logo-placeholder {
-            max-height: 20mm;
-            max-width: 60mm;
-            object-fit: contain;
+            height: 22mm;
             margin-bottom: 2mm;
         }
 
         /* Titles */
         .title-section {
             text-align: center;
-            margin-bottom: 4mm;
+            margin-bottom: 1mm;
         }
         .subtitle {
             font-size: 8.5pt;
@@ -136,7 +122,7 @@
             color: var(--blue);
             text-transform: uppercase;
             font-weight: 600;
-            margin-bottom: 2mm;
+            margin-bottom: 1mm;
         }
         .main-title {
             font-family: 'Playfair Display', serif;
@@ -156,10 +142,9 @@
 
         /* Body Content */
         .body-section {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            text-align: center;
+            margin-bottom: 2mm;
+            padding: 0 10mm;
         }
 
         .greeting {
@@ -168,7 +153,7 @@
             font-weight: 600;
             color: var(--navy);
             letter-spacing: 1px;
-            margin-bottom: 5mm;
+            margin-bottom: 1mm;
         }
 
         /* Structured Fill-in Fields */
@@ -176,7 +161,7 @@
             text-align: center;
             font-size: 10pt;
             color: var(--gray);
-            margin-bottom: 3mm;
+            margin-bottom: 1mm;
         }
 
         .fields-container {
@@ -184,7 +169,7 @@
             justify-content: center;
             align-items: flex-end;
             gap: 5mm;
-            margin-bottom: 4mm;
+            margin-bottom: 1mm;
         }
         .field-group {
             display: flex;
@@ -216,7 +201,7 @@
             font-weight: 600;
             color: var(--navy);
             font-size: 10pt;
-            margin-bottom: 4mm;
+            margin-bottom: 1mm;
         }
 
         .internship-period {
@@ -237,8 +222,8 @@
             margin-top: 2mm;
         }
         .paragraphs p {
-            font-size: 9.5pt;
-            line-height: 1.7;
+            font-size: 10pt;
+            line-height: 1.5;
             color: var(--gray);
             margin: 0 0 3mm 0;
             text-align: justify;
@@ -251,31 +236,32 @@
             justify-content: space-between;
             align-items: flex-end;
             margin-top: auto;
-            padding: 0 10mm;
+            padding: 0 0mm;
         }
 
         .sig-block {
-            width: 55mm;
+            width: 90mm;
             text-align: left;
         }
         .sig-block.right {
+            width: 70mm;
             text-align: right;
         }
         .sig-line {
             border-bottom: 1px solid var(--navy);
-            margin-bottom: 2mm;
+            margin-bottom: 1mm;
             width: 100%;
         }
         .sig-role {
             font-weight: 600;
             font-size: 9pt;
             color: var(--navy);
-            margin-bottom: 3mm;
+            margin-bottom: 1mm;
         }
         .sig-detail-group {
             font-size: 8.5pt;
             color: var(--gray);
-            line-height: 1.8;
+            line-height: 1.2;
         }
         .sig-detail {
             display: flex;
@@ -283,12 +269,13 @@
         }
         .detail-label {
             margin-right: 2mm;
-            width: 26mm;
+            font-size: 8pt;
+            white-space: nowrap;
         }
         .detail-blank {
             flex-grow: 1;
             border-bottom: 1px solid #cbd5e1;
-            height: 4mm;
+            height: 2.5mm;
         }
         .mt-2 { margin-top: 2mm; }
 
@@ -323,7 +310,7 @@
         /* Subtle Footer Border */
         .bottom-accent {
             text-align: center;
-            margin-top: 5mm;
+            margin-top: 0mm;
         }
         .bottom-line {
             width: 20mm;
@@ -349,8 +336,11 @@
     <div class="certificate-container">
         <!-- Minimal Geometric Background -->
         <div class="bg-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
+            <svg width="100%" height="100%" viewBox="0 0 297 210" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path d="M -20,-20 Q 50,20 80,-20 Q 120,50 -20,80 Z" fill="var(--blue)" opacity="0.03" />
+                <path d="M 320,230 Q 250,190 220,230 Q 180,160 320,130 Z" fill="var(--light-blue)" opacity="0.15" />
+                <path d="M 280,-10 Q 260,30 310,40 Q 290,60 310,80 Z" stroke="var(--blue)" stroke-width="0.5" fill="none" opacity="0.1" />
+            </svg>
         </div>
 
         <!-- Elegant Borders -->
@@ -370,6 +360,7 @@
                 <!-- IMPORTANT: Replace the 'src' below with your actual logo file path -->
                 <!-- e.g. src="livetalk-logo.png" -->
                 <img src="https://via.placeholder.com/300x100/ffffff/0B1B3D?text=[+INSERT+LIVETALK+LOGO+HERE+]" alt="LiveTalk Software House Logo" class="logo-placeholder">
+                <div style="font-size: 14pt; font-weight: 600; color: var(--navy); margin-bottom: 1mm;">LiveTalk Software House</div>
             </div>
 
             <!-- Title -->
@@ -389,11 +380,11 @@
                 <div class="fields-container">
                     <div class="field-group">
                         <span class="field-label">Mr./Ms.</span>
-                        <span class="field-blank name-blank"></span>
+                        <span class="field-blank name-blank"></span><span style="color: var(--gray); font-size: 10pt; font-weight: 500;">,</span>
                     </div>
                     <div class="field-group">
                         <span class="field-label">Registration No.</span>
-                        <span class="field-blank reg-blank"></span>
+                        <span class="field-blank reg-blank"></span><span style="color: var(--gray); font-size: 10pt; font-weight: 500;">,</span>
                     </div>
                 </div>
 
@@ -401,33 +392,26 @@
 
                 <div class="fields-container">
                     <div class="field-group">
-                        <span class="field-label">Semester:</span>
                         <span class="field-blank sem-blank"></span>
-                    </div>
-                    <div class="field-group">
-                        <span class="field-label">BS Program:</span>
+                        <span class="field-label" style="margin-left: 2mm;">Semester BS</span>
                         <span class="field-blank prog-blank"></span>
-                    </div>
-                    <div class="field-group">
-                        <span class="field-label">Department:</span>
-                        <span class="field-blank dept-blank"></span>
+                        <span class="field-label" style="margin-left: 2mm;">Department,</span>
                     </div>
                 </div>
 
-                <div class="college-name">Govt. Postgraduate College Kohat</div>
+                <div class="college-name">Govt. Postgraduate College Kohat,</div>
 
-                <div class="text-line">has successfully completed a 9 weeks mandatory internship at LiveTalk Software House.</div>
+                <div class="text-line">has successfully completed a 9 weeks mandatory internship at LiveTalk Software House</div>
 
                 <div class="internship-period">
-                    <span class="period-title">INTERNSHIP PERIOD</span>
                     <div class="fields-container" style="margin-bottom: 0;">
                         <div class="field-group">
-                            <span class="field-label">From:</span>
+                            <span class="field-label">from</span>
                             <span class="field-blank date-blank"></span>
                         </div>
                         <div class="field-group">
-                            <span class="field-label">To:</span>
-                            <span class="field-blank date-blank"></span>
+                            <span class="field-label">to</span>
+                            <span class="field-blank date-blank"></span><span style="color: var(--gray); font-size: 10pt; font-weight: 500;">.</span>
                         </div>
                     </div>
                 </div>
@@ -453,15 +437,15 @@
                     <div class="sig-line"></div>
                     <div class="sig-role">Authorized Officer / Supervisor</div>
                     <div class="sig-detail-group">
-                        <div class="sig-detail">
-                            <span class="detail-label">Name:</span>
+                        <div class="sig-detail" style="margin-bottom: 1mm;">
+                            <span class="detail-label">Name of Authorized Officer/Supervisor:</span>
                             <span class="detail-blank"></span>
                         </div>
-                        <div class="sig-detail">
+                        <div class="sig-detail" style="margin-bottom: 1mm;">
                             <span class="detail-label">Designation:</span>
                             <span class="detail-blank"></span>
                         </div>
-                        <div class="sig-detail mt-2">
+                        <div class="sig-detail">
                             <span class="detail-label">Date of Issue:</span>
                             <span class="detail-blank"></span>
                         </div>
