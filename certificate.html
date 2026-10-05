@@ -46,6 +46,7 @@
 
         /* Main Certificate Container */
         .certificate-container {
+            box-sizing: border-box;
             width: 297mm;
             height: 210mm;
             background: #ffffff;
@@ -64,16 +65,20 @@
         }
         .shape {
             position: absolute;
-            border: 1px solid rgba(30, 101, 243, 0.04);
-            border-radius: 50%;
+            border: 1.5px solid rgba(30, 101, 243, 0.05);
+            /* subtle speech-bubble-inspired geometry */
         }
         .shape-1 {
             width: 180mm; height: 180mm;
             top: -60mm; left: -60mm;
+            border-radius: 50% 50% 50% 10%;
+            transform: rotate(-15deg);
         }
         .shape-2 {
             width: 220mm; height: 220mm;
             bottom: -100mm; right: -80mm;
+            border-radius: 50% 50% 10% 50%;
+            transform: rotate(15deg);
         }
 
         /* Elegant Double Border */
@@ -255,10 +260,11 @@
         }
 
         .sig-block {
-            width: 55mm;
+            width: 70mm;
             text-align: left;
         }
         .sig-block.right {
+            width: 55mm;
             text-align: right;
         }
         .sig-line {
@@ -279,16 +285,18 @@
         }
         .sig-detail {
             display: flex;
-            align-items: flex-end;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 2mm;
         }
         .detail-label {
-            margin-right: 2mm;
-            width: 26mm;
+            margin-bottom: 1mm;
+            white-space: nowrap;
         }
         .detail-blank {
-            flex-grow: 1;
+            width: 100%;
             border-bottom: 1px solid #cbd5e1;
-            height: 4mm;
+            height: 3mm;
         }
         .mt-2 { margin-top: 2mm; }
 
@@ -416,19 +424,17 @@
 
                 <div class="college-name">Govt. Postgraduate College Kohat</div>
 
-                <div class="text-line">has successfully completed a 9 weeks mandatory internship at LiveTalk Software House.</div>
+                <div class="text-line">has successfully completed a 9 weeks mandatory internship at LiveTalk Software House</div>
 
-                <div class="internship-period">
-                    <span class="period-title">INTERNSHIP PERIOD</span>
-                    <div class="fields-container" style="margin-bottom: 0;">
-                        <div class="field-group">
-                            <span class="field-label">From:</span>
-                            <span class="field-blank date-blank"></span>
-                        </div>
-                        <div class="field-group">
-                            <span class="field-label">To:</span>
-                            <span class="field-blank date-blank"></span>
-                        </div>
+                <div class="fields-container" style="margin-bottom: 4mm;">
+                    <span class="text-line" style="margin-right: 2mm; margin-bottom: 0;">from</span>
+                    <div class="field-group">
+                        <span class="field-blank date-blank" style="width: 35mm;"></span>
+                    </div>
+                    <span class="text-line" style="margin-left: 2mm; margin-right: 2mm; margin-bottom: 0;">to</span>
+                    <div class="field-group">
+                        <span class="field-blank date-blank" style="width: 35mm;"></span>
+                        <span class="text-line" style="margin-left: 1mm; margin-bottom: 0;">.</span>
                     </div>
                 </div>
 
@@ -454,7 +460,7 @@
                     <div class="sig-role">Authorized Officer / Supervisor</div>
                     <div class="sig-detail-group">
                         <div class="sig-detail">
-                            <span class="detail-label">Name:</span>
+                            <span class="detail-label">Name of Authorized Officer/Supervisor:</span>
                             <span class="detail-blank"></span>
                         </div>
                         <div class="sig-detail">
