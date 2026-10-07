@@ -65,15 +65,17 @@
         .shape {
             position: absolute;
             border: 1px solid rgba(30, 101, 243, 0.04);
-            border-radius: 50%;
+            border-radius: 50% 50% 50% 0;
         }
         .shape-1 {
             width: 180mm; height: 180mm;
             top: -60mm; left: -60mm;
+            transform: rotate(-45deg);
         }
         .shape-2 {
             width: 220mm; height: 220mm;
             bottom: -100mm; right: -80mm;
+            transform: rotate(135deg);
         }
 
         /* Elegant Double Border */
@@ -128,7 +130,7 @@
         /* Titles */
         .title-section {
             text-align: center;
-            margin-bottom: 4mm;
+            margin-bottom: 2mm;
         }
         .subtitle {
             font-size: 8.5pt;
@@ -136,7 +138,7 @@
             color: var(--blue);
             text-transform: uppercase;
             font-weight: 600;
-            margin-bottom: 2mm;
+            margin-bottom: 1mm;
         }
         .main-title {
             font-family: 'Playfair Display', serif;
@@ -150,7 +152,7 @@
             width: 80mm;
             height: 1.5px;
             background: var(--blue);
-            margin: 4mm auto 0;
+            margin: 2mm auto 0;
             opacity: 0.7;
         }
 
@@ -168,7 +170,7 @@
             font-weight: 600;
             color: var(--navy);
             letter-spacing: 1px;
-            margin-bottom: 5mm;
+            margin-bottom: 3mm;
         }
 
         /* Structured Fill-in Fields */
@@ -370,6 +372,7 @@
                 <!-- IMPORTANT: Replace the 'src' below with your actual logo file path -->
                 <!-- e.g. src="livetalk-logo.png" -->
                 <img src="https://via.placeholder.com/300x100/ffffff/0B1B3D?text=[+INSERT+LIVETALK+LOGO+HERE+]" alt="LiveTalk Software House Logo" class="logo-placeholder">
+                <div style="font-size: 16pt; font-weight: 600; color: var(--navy); margin-top: 2mm;">LiveTalk Software House</div>
             </div>
 
             <!-- Title -->
@@ -483,6 +486,7 @@
 
             <div class="bottom-accent">
                 <div class="bottom-line"></div>
+                <div style="font-size: 8pt; color: var(--gray); margin-top: 2mm; text-transform: uppercase; letter-spacing: 1px;">LiveTalk Software House</div>
             </div>
 
         </div>
