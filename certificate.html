@@ -46,11 +46,12 @@
 
         /* Main Certificate Container */
         .certificate-container {
+            box-sizing: border-box;
             width: 297mm;
             height: 210mm;
             background: #ffffff;
             position: relative;
-            padding: 12mm;
+            padding: 15mm;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             overflow: hidden;
         }
@@ -65,7 +66,7 @@
         .shape {
             position: absolute;
             border: 1px solid rgba(30, 101, 243, 0.04);
-            border-radius: 50%;
+            border-radius: 50% 50% 50% 10%;
         }
         .shape-1 {
             width: 180mm; height: 180mm;
@@ -110,25 +111,25 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            padding: 8mm 15mm;
+            padding: 20mm 20mm 25mm 20mm;
         }
 
         /* Header / Logo */
         .header {
             text-align: center;
-            margin-bottom: 2mm;
+            margin-bottom: 1mm;
         }
         .logo-placeholder {
-            max-height: 20mm;
+            max-height: 15mm;
             max-width: 60mm;
             object-fit: contain;
-            margin-bottom: 2mm;
+            margin-bottom: 1mm;
         }
 
         /* Titles */
         .title-section {
             text-align: center;
-            margin-bottom: 4mm;
+            margin-bottom: 1mm;
         }
         .subtitle {
             font-size: 8.5pt;
@@ -136,11 +137,11 @@
             color: var(--blue);
             text-transform: uppercase;
             font-weight: 600;
-            margin-bottom: 2mm;
+            margin-bottom: 1mm;
         }
         .main-title {
             font-family: 'Playfair Display', serif;
-            font-size: 24pt;
+            font-size: 22pt;
             color: var(--navy);
             margin: 0;
             letter-spacing: 2px;
@@ -168,7 +169,7 @@
             font-weight: 600;
             color: var(--navy);
             letter-spacing: 1px;
-            margin-bottom: 5mm;
+            margin-bottom: 1mm;
         }
 
         /* Structured Fill-in Fields */
@@ -176,7 +177,7 @@
             text-align: center;
             font-size: 10pt;
             color: var(--gray);
-            margin-bottom: 3mm;
+            margin-bottom: 1mm;
         }
 
         .fields-container {
@@ -184,7 +185,7 @@
             justify-content: center;
             align-items: flex-end;
             gap: 5mm;
-            margin-bottom: 4mm;
+            margin-bottom: 1mm;
         }
         .field-group {
             display: flex;
@@ -199,12 +200,12 @@
         }
         .field-blank {
             border-bottom: 1px solid var(--gray);
-            height: 5mm;
+            height: 4mm;
             display: inline-block;
         }
 
         /* Specific Blank Widths */
-        .name-blank { width: 70mm; }
+        .name-blank { border-bottom: 1.5px solid var(--navy);  width: 70mm; }
         .reg-blank { width: 40mm; }
         .sem-blank { width: 25mm; }
         .prog-blank { width: 35mm; }
@@ -216,12 +217,12 @@
             font-weight: 600;
             color: var(--navy);
             font-size: 10pt;
-            margin-bottom: 4mm;
+            margin-bottom: 1mm;
         }
 
         .internship-period {
             text-align: center;
-            margin: 4mm 0;
+            margin: 2mm 0;
         }
         .period-title {
             font-size: 8pt;
@@ -234,11 +235,11 @@
 
         /* Paragraphs */
         .paragraphs {
-            margin-top: 2mm;
+            margin-top: 1mm;
         }
         .paragraphs p {
-            font-size: 9.5pt;
-            line-height: 1.7;
+            font-size: 10pt;
+            line-height: 1.8;
             color: var(--gray);
             margin: 0 0 3mm 0;
             text-align: justify;
@@ -263,14 +264,14 @@
         }
         .sig-line {
             border-bottom: 1px solid var(--navy);
-            margin-bottom: 2mm;
+            margin-bottom: 1mm;
             width: 100%;
         }
         .sig-role {
             font-weight: 600;
             font-size: 9pt;
             color: var(--navy);
-            margin-bottom: 3mm;
+            margin-bottom: 1mm;
         }
         .sig-detail-group {
             font-size: 8.5pt;
@@ -290,7 +291,7 @@
             border-bottom: 1px solid #cbd5e1;
             height: 4mm;
         }
-        .mt-2 { margin-top: 2mm; }
+        .mt-2 { margin-top: 1mm; }
 
         .host-org {
             font-family: 'Playfair Display', serif;
@@ -304,8 +305,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 32mm;
-            height: 32mm;
+            width: 25mm;
+            height: 25mm;
             border: 1.2px dashed var(--blue);
             border-radius: 50%;
             opacity: 0.6;
@@ -317,13 +318,13 @@
             font-weight: 600;
             text-align: center;
             letter-spacing: 0.5px;
-            padding: 2mm;
+            padding: 1mm;
         }
 
         /* Subtle Footer Border */
         .bottom-accent {
             text-align: center;
-            margin-top: 5mm;
+            margin-top: 1mm;
         }
         .bottom-line {
             width: 20mm;
@@ -337,6 +338,7 @@
         @media print {
             body { background: none; min-height: auto; }
             .certificate-container {
+            box-sizing: border-box;
                 box-shadow: none;
                 width: 100%;
                 height: 100vh;
