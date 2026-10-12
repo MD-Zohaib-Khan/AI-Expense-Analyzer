@@ -64,16 +64,21 @@
         }
         .shape {
             position: absolute;
-            border: 1px solid rgba(30, 101, 243, 0.04);
-            border-radius: 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.04;
         }
         .shape-1 {
             width: 180mm; height: 180mm;
             top: -60mm; left: -60mm;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%231E65F3' d='M80 50c0 16.5-13.5 30-30 30-4.6 0-9-1-12.9-2.9L15 85l6-19.8C17.2 60.5 15 55.4 15 50c0-16.5 13.5-30 30-30s30 13.5 30 30z'/%3E%3C/svg%3E");
+            transform: rotate(-15deg);
         }
         .shape-2 {
             width: 220mm; height: 220mm;
             bottom: -100mm; right: -80mm;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%231E65F3' d='M85 50c0 16.5-13.5 30-30 30-4.6 0-9-1-12.9-2.9L20 85l6-19.8C22.2 60.5 20 55.4 20 50c0-16.5 13.5-30 30-30s30 13.5 30 30z'/%3E%3C/svg%3E");
+            transform: scaleX(-1) rotate(-15deg);
         }
 
         /* Elegant Double Border */
@@ -110,7 +115,8 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            padding: 8mm 15mm;
+            padding: 5mm 15mm 2mm 15mm;
+            box-sizing: border-box;
         }
 
         /* Header / Logo */
@@ -128,7 +134,7 @@
         /* Titles */
         .title-section {
             text-align: center;
-            margin-bottom: 4mm;
+            margin-bottom: 1mm;
         }
         .subtitle {
             font-size: 8.5pt;
@@ -140,7 +146,7 @@
         }
         .main-title {
             font-family: 'Playfair Display', serif;
-            font-size: 24pt;
+            font-size: 22pt;
             color: var(--navy);
             margin: 0;
             letter-spacing: 2px;
@@ -160,6 +166,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            margin-bottom: 2mm;
         }
 
         .greeting {
@@ -168,15 +175,15 @@
             font-weight: 600;
             color: var(--navy);
             letter-spacing: 1px;
-            margin-bottom: 5mm;
+            margin-bottom: 2mm;
         }
 
         /* Structured Fill-in Fields */
         .text-line {
             text-align: center;
-            font-size: 10pt;
+            font-size: 9.5pt;
             color: var(--gray);
-            margin-bottom: 3mm;
+            margin-bottom: 1mm;
         }
 
         .fields-container {
@@ -184,7 +191,7 @@
             justify-content: center;
             align-items: flex-end;
             gap: 5mm;
-            margin-bottom: 4mm;
+            margin-bottom: 2mm;
         }
         .field-group {
             display: flex;
@@ -215,13 +222,13 @@
             text-align: center;
             font-weight: 600;
             color: var(--navy);
-            font-size: 10pt;
-            margin-bottom: 4mm;
+            font-size: 9.5pt;
+            margin-bottom: 2mm;
         }
 
         .internship-period {
             text-align: center;
-            margin: 4mm 0;
+            margin: 1mm 0;
         }
         .period-title {
             font-size: 8pt;
@@ -234,13 +241,13 @@
 
         /* Paragraphs */
         .paragraphs {
-            margin-top: 2mm;
+            margin-top: 1mm;
         }
         .paragraphs p {
             font-size: 9.5pt;
-            line-height: 1.7;
+            line-height: 1.6;
             color: var(--gray);
-            margin: 0 0 3mm 0;
+            margin: 0 0 1.5mm 0;
             text-align: justify;
             text-align-last: center;
         }
@@ -251,11 +258,11 @@
             justify-content: space-between;
             align-items: flex-end;
             margin-top: auto;
-            padding: 0 10mm;
+            padding: 0 5mm;
         }
 
         .sig-block {
-            width: 55mm;
+            width: 75mm;
             text-align: left;
         }
         .sig-block.right {
@@ -280,15 +287,17 @@
         .sig-detail {
             display: flex;
             align-items: flex-end;
+            flex-wrap: nowrap;
+            white-space: nowrap;
         }
         .detail-label {
             margin-right: 2mm;
-            width: 26mm;
         }
         .detail-blank {
             flex-grow: 1;
             border-bottom: 1px solid #cbd5e1;
             height: 4mm;
+            min-width: 30mm;
         }
         .mt-2 { margin-top: 2mm; }
 
@@ -304,12 +313,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 32mm;
-            height: 32mm;
+            width: 28mm;
+            height: 28mm;
             border: 1.2px dashed var(--blue);
             border-radius: 50%;
             opacity: 0.6;
-            margin: 0 10mm;
+            margin: 0 5mm;
         }
         .stamp-text {
             font-size: 7.5pt;
@@ -369,7 +378,7 @@
             <div class="header">
                 <!-- IMPORTANT: Replace the 'src' below with your actual logo file path -->
                 <!-- e.g. src="livetalk-logo.png" -->
-                <img src="https://via.placeholder.com/300x100/ffffff/0B1B3D?text=[+INSERT+LIVETALK+LOGO+HERE+]" alt="LiveTalk Software House Logo" class="logo-placeholder">
+                <img src="livetalk-logo.png" alt="LiveTalk Software House Logo" class="logo-placeholder">
             </div>
 
             <!-- Title -->
@@ -388,8 +397,8 @@
 
                 <div class="fields-container">
                     <div class="field-group">
-                        <span class="field-label">Mr./Ms.</span>
-                        <span class="field-blank name-blank"></span>
+                        <span class="field-label" style="font-size: 11pt; font-weight: 600;">Mr./Ms.</span>
+                        <span class="field-blank name-blank" style="font-size: 11pt; font-weight: 600;"></span>
                     </div>
                     <div class="field-group">
                         <span class="field-label">Registration No.</span>
@@ -454,7 +463,7 @@
                     <div class="sig-role">Authorized Officer / Supervisor</div>
                     <div class="sig-detail-group">
                         <div class="sig-detail">
-                            <span class="detail-label">Name:</span>
+                            <span class="detail-label" style="width: auto; margin-right: 2mm; display: inline-block;">Name of Authorized Officer/Supervisor:</span>
                             <span class="detail-blank"></span>
                         </div>
                         <div class="sig-detail">
@@ -483,6 +492,7 @@
 
             <div class="bottom-accent">
                 <div class="bottom-line"></div>
+                <div style="font-size: 7.5pt; color: var(--gray); margin-top: 2mm; letter-spacing: 1px; text-transform: uppercase;">Internship Completion Certificate</div>
             </div>
 
         </div>
