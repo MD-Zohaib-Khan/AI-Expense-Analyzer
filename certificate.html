@@ -50,30 +50,34 @@
             height: 210mm;
             background: #ffffff;
             position: relative;
-            padding: 12mm;
+            padding: 12mm; /* Important to keep padding so text doesn't hit edge */
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             overflow: hidden;
         }
 
-        /* Extremely Subtle Geometric Background */
+        /* Extremely Subtle Geometric Background - Speech bubbles */
         .bg-shapes {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             z-index: 1;
             pointer-events: none;
         }
-        .shape {
+        .bubble-shape {
             position: absolute;
-            border: 1px solid rgba(30, 101, 243, 0.04);
-            border-radius: 50%;
+            opacity: 0.02; /* Extremely subtle */
         }
-        .shape-1 {
-            width: 180mm; height: 180mm;
-            top: -60mm; left: -60mm;
+
+        /* Top left abstract bubble */
+        .bubble-1 {
+            top: -20mm;
+            left: -10mm;
+            width: 150mm;
         }
-        .shape-2 {
-            width: 220mm; height: 220mm;
-            bottom: -100mm; right: -80mm;
+        /* Bottom right abstract bubble */
+        .bubble-2 {
+            bottom: -30mm;
+            right: -20mm;
+            width: 180mm;
         }
 
         /* Elegant Double Border */
@@ -110,7 +114,7 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            padding: 8mm 15mm;
+            padding: 2mm 12mm;
         }
 
         /* Header / Logo */
@@ -119,9 +123,17 @@
             margin-bottom: 2mm;
         }
         .logo-placeholder {
-            max-height: 20mm;
+            max-height: 16mm;
             max-width: 60mm;
             object-fit: contain;
+            margin-bottom: 1mm;
+        }
+        .org-name {
+            font-size: 11pt;
+            color: var(--navy);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-top: 0;
             margin-bottom: 2mm;
         }
 
@@ -131,7 +143,7 @@
             margin-bottom: 4mm;
         }
         .subtitle {
-            font-size: 8.5pt;
+            font-size: 8pt;
             letter-spacing: 3px;
             color: var(--blue);
             text-transform: uppercase;
@@ -140,7 +152,7 @@
         }
         .main-title {
             font-family: 'Playfair Display', serif;
-            font-size: 24pt;
+            font-size: 20pt;
             color: var(--navy);
             margin: 0;
             letter-spacing: 2px;
@@ -150,7 +162,7 @@
             width: 80mm;
             height: 1.5px;
             background: var(--blue);
-            margin: 4mm auto 0;
+            margin: 3mm auto 0;
             opacity: 0.7;
         }
 
@@ -164,19 +176,20 @@
 
         .greeting {
             text-align: center;
-            font-size: 11pt;
+            font-size: 10.5pt;
             font-weight: 600;
             color: var(--navy);
             letter-spacing: 1px;
-            margin-bottom: 5mm;
+            margin-bottom: 4mm;
         }
 
         /* Structured Fill-in Fields */
         .text-line {
             text-align: center;
-            font-size: 10pt;
-            color: var(--gray);
+            font-size: 9.5pt;
+            color: var(--navy);
             margin-bottom: 3mm;
+            line-height: 1.6;
         }
 
         .fields-container {
@@ -184,7 +197,7 @@
             justify-content: center;
             align-items: flex-end;
             gap: 5mm;
-            margin-bottom: 4mm;
+            margin-bottom: 3mm;
         }
         .field-group {
             display: flex;
@@ -194,17 +207,17 @@
             font-weight: 500;
             color: var(--navy);
             margin-right: 2mm;
-            font-size: 10pt;
+            font-size: 9.5pt;
             white-space: nowrap;
         }
         .field-blank {
-            border-bottom: 1px solid var(--gray);
-            height: 5mm;
+            border-bottom: 1px solid var(--navy);
+            height: 4.5mm;
             display: inline-block;
         }
 
         /* Specific Blank Widths */
-        .name-blank { width: 70mm; }
+        .name-blank { width: 70mm; font-family: 'Playfair Display', serif; font-size: 11pt; font-weight: 600; }
         .reg-blank { width: 40mm; }
         .sem-blank { width: 25mm; }
         .prog-blank { width: 35mm; }
@@ -215,13 +228,13 @@
             text-align: center;
             font-weight: 600;
             color: var(--navy);
-            font-size: 10pt;
-            margin-bottom: 4mm;
+            font-size: 9.5pt;
+            margin-bottom: 3mm;
         }
 
         .internship-period {
             text-align: center;
-            margin: 4mm 0;
+            margin: 3mm 0;
         }
         .period-title {
             font-size: 8pt;
@@ -235,12 +248,13 @@
         /* Paragraphs */
         .paragraphs {
             margin-top: 2mm;
+            padding: 0 10mm;
         }
         .paragraphs p {
-            font-size: 9.5pt;
-            line-height: 1.7;
-            color: var(--gray);
-            margin: 0 0 3mm 0;
+            font-size: 9pt;
+            line-height: 1.5;
+            color: var(--navy);
+            margin: 0 0 2mm 0;
             text-align: justify;
             text-align-last: center;
         }
@@ -252,14 +266,24 @@
             align-items: flex-end;
             margin-top: auto;
             padding: 0 10mm;
+            margin-bottom: 2mm;
         }
 
         .sig-block {
-            width: 55mm;
+            width: 75mm;
             text-align: left;
+            position: relative;
+            z-index: 10;
         }
         .sig-block.right {
             text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            width: 55mm;
+            position: relative;
+            z-index: 10;
+            padding-bottom: 4mm;
         }
         .sig-line {
             border-bottom: 1px solid var(--navy);
@@ -271,31 +295,33 @@
             font-size: 9pt;
             color: var(--navy);
             margin-bottom: 3mm;
+            width: 100%;
         }
         .sig-detail-group {
             font-size: 8.5pt;
-            color: var(--gray);
+            color: var(--navy);
             line-height: 1.8;
+            width: 100%;
         }
         .sig-detail {
             display: flex;
             align-items: flex-end;
+            margin-bottom: 1.5mm;
         }
         .detail-label {
             margin-right: 2mm;
-            width: 26mm;
+            white-space: nowrap;
         }
         .detail-blank {
             flex-grow: 1;
-            border-bottom: 1px solid #cbd5e1;
+            border-bottom: 1px solid var(--navy);
             height: 4mm;
         }
         .mt-2 { margin-top: 2mm; }
 
         .host-org {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 10.5pt;
+            font-weight: 600;
+            font-size: 9.5pt;
             color: var(--navy);
         }
 
@@ -306,10 +332,13 @@
             align-items: center;
             width: 32mm;
             height: 32mm;
-            border: 1.2px dashed var(--blue);
-            border-radius: 50%;
+            border: 1.2px solid var(--blue);
+            border-radius: 4px; /* subtle rectangle/circle */
             opacity: 0.6;
-            margin: 0 10mm;
+            margin: 0 5mm;
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.8);
         }
         .stamp-text {
             font-size: 7.5pt;
@@ -323,7 +352,8 @@
         /* Subtle Footer Border */
         .bottom-accent {
             text-align: center;
-            margin-top: 5mm;
+            margin-top: 3mm;
+            margin-bottom: 2mm;
         }
         .bottom-line {
             width: 20mm;
@@ -349,8 +379,12 @@
     <div class="certificate-container">
         <!-- Minimal Geometric Background -->
         <div class="bg-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
+            <svg class="bubble-shape bubble-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#0B1B3D" d="M100,10 C40,10 10,40 10,90 C10,115 25,135 45,145 L40,180 L80,160 C85,162 95,165 100,165 C160,165 190,135 190,90 C190,40 160,10 100,10 Z" />
+            </svg>
+            <svg class="bubble-shape bubble-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#1E65F3" d="M100,10 C160,10 190,40 190,90 C190,115 175,135 155,145 L160,180 L120,160 C115,162 105,165 100,165 C40,165 10,135 10,90 C10,40 40,10 100,10 Z" />
+            </svg>
         </div>
 
         <!-- Elegant Borders -->
@@ -370,6 +404,7 @@
                 <!-- IMPORTANT: Replace the 'src' below with your actual logo file path -->
                 <!-- e.g. src="livetalk-logo.png" -->
                 <img src="https://via.placeholder.com/300x100/ffffff/0B1B3D?text=[+INSERT+LIVETALK+LOGO+HERE+]" alt="LiveTalk Software House Logo" class="logo-placeholder">
+                <div class="org-name">LiveTalk Software House</div>
             </div>
 
             <!-- Title -->
@@ -416,7 +451,7 @@
 
                 <div class="college-name">Govt. Postgraduate College Kohat</div>
 
-                <div class="text-line">has successfully completed a 9 weeks mandatory internship at LiveTalk Software House.</div>
+                <div class="text-line">has successfully completed a 9 weeks mandatory internship at LiveTalk Software House</div>
 
                 <div class="internship-period">
                     <span class="period-title">INTERNSHIP PERIOD</span>
@@ -454,7 +489,7 @@
                     <div class="sig-role">Authorized Officer / Supervisor</div>
                     <div class="sig-detail-group">
                         <div class="sig-detail">
-                            <span class="detail-label">Name:</span>
+                            <span class="detail-label">Name of Authorized Officer/Supervisor:</span>
                             <span class="detail-blank"></span>
                         </div>
                         <div class="sig-detail">
