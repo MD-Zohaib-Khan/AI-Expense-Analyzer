@@ -5,153 +5,156 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Internship Completion Certificate - LiveTalk Software House</title>
 
-    <!-- Google Fonts for Premium Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* CSS Variables based on Brand Identity */
         :root {
-            --navy: #0B1B3D;       /* Deep Navy/Dark Blue */
-            --blue: #1E65F3;       /* Bright/Modern Blue */
-            --light-blue: #E8F0FE; /* Subtle Accent Blue */
-            --gray: #4A5568;       /* Soft Neutral Gray */
-            --text-dark: #2D3748;
-        }
-
-        /* Print and Page Setup */
-        @page {
-            size: A4 landscape;
-            margin: 0;
+            --navy: #0B1B3D;
+            --blue: #1E65F3;
+            --gray: #4A5568;
+            --light-bg: #FAFBFC;
+            --white: #FFFFFF;
         }
 
         * {
             box-sizing: border-box;
-            -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            margin: 0;
-            padding: 0;
-            background: #e2e8f0; /* Display background */
+            background-color: #E2E8F0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            font-family: 'Inter', sans-serif;
-            color: var(--text-dark);
+            font-family: 'Montserrat', sans-serif;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
         }
 
-        /* Main Certificate Container */
+        /* A4 Landscape Container */
         .certificate-container {
             width: 297mm;
             height: 210mm;
-            background: #ffffff;
+            background-color: var(--white);
             position: relative;
-            padding: 12mm;
+            padding: 22mm 25mm 22mm 25mm;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             overflow: hidden;
         }
 
-        /* Extremely Subtle Geometric Background */
+        /* Geometric Shapes & Backgrounds */
         .bg-shapes {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             z-index: 1;
             pointer-events: none;
         }
-        .shape {
+
+        .bubble-shape {
             position: absolute;
-            border: 1px solid rgba(30, 101, 243, 0.04);
             border-radius: 50%;
-        }
-        .shape-1 {
-            width: 180mm; height: 180mm;
-            top: -60mm; left: -60mm;
-        }
-        .shape-2 {
-            width: 220mm; height: 220mm;
-            bottom: -100mm; right: -80mm;
+            background: rgba(30, 101, 243, 0.03); /* Very light brand blue */
         }
 
-        /* Elegant Double Border */
+        .bubble-1 {
+            width: 800px;
+            height: 800px;
+            top: -400px;
+            left: -200px;
+        }
+
+        .bubble-2 {
+            width: 600px;
+            height: 600px;
+            bottom: -300px;
+            right: -100px;
+            background: rgba(30, 101, 243, 0.02);
+        }
+
+        /* Border System */
         .border-outer {
             position: absolute;
-            top: 10mm; left: 10mm; right: 10mm; bottom: 10mm;
-            border: 1.5px solid var(--navy);
-            z-index: 2;
+            top: 12mm; left: 12mm; right: 12mm; bottom: 12mm;
+            border: 1px solid var(--navy);
+            z-index: 5;
             pointer-events: none;
         }
+
         .border-inner {
             position: absolute;
-            top: 2.5mm; left: 2.5mm; right: 2.5mm; bottom: 2.5mm;
-            border: 0.75px solid var(--blue);
-            opacity: 0.6;
+            top: 13.5mm; left: 13.5mm; right: 13.5mm; bottom: 13.5mm;
+            border: 0.5px solid var(--blue);
         }
 
-        /* Subtle Geometric Corners */
+        /* Subtle Corner Accents */
         .corner {
             position: absolute;
-            width: 8mm;
-            height: 8mm;
-            border: 2px solid var(--navy);
+            width: 6mm;
+            height: 6mm;
+            border: 1px solid var(--navy);
+            background: #fff;
         }
-        .corner-tl { top: -2px; left: -2px; border-right: none; border-bottom: none; }
-        .corner-tr { top: -2px; right: -2px; border-left: none; border-bottom: none; }
-        .corner-bl { bottom: -2px; left: -2px; border-right: none; border-top: none; }
-        .corner-br { bottom: -2px; right: -2px; border-left: none; border-top: none; }
 
-        /* Content Layout */
+        .corner-tl { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+        .corner-tr { top: -1px; right: -1px; border-left: none; border-bottom: none; }
+        .corner-bl { bottom: -1px; left: -1px; border-right: none; border-top: none; }
+        .corner-br { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+        /* Main Content Wrapper */
         .content {
             position: relative;
-            z-index: 3;
-            height: 100%;
+            z-index: 10;
             display: flex;
             flex-direction: column;
-            padding: 8mm 15mm;
+            height: 100%;
         }
 
-        /* Header / Logo */
+        /* Typography & Layout */
         .header {
             text-align: center;
-            margin-bottom: 2mm;
-        }
-        .logo-placeholder {
-            max-height: 20mm;
-            max-width: 60mm;
-            object-fit: contain;
-            margin-bottom: 2mm;
+            margin-bottom: 5mm;
         }
 
-        /* Titles */
+        .logo-placeholder {
+            max-height: 70px;
+            width: auto;
+            object-fit: contain;
+        }
+
         .title-section {
             text-align: center;
-            margin-bottom: 4mm;
+            margin-bottom: 5mm;
         }
+
         .subtitle {
-            font-size: 8.5pt;
+            font-size: 8pt;
+            text-transform: uppercase;
             letter-spacing: 3px;
             color: var(--blue);
-            text-transform: uppercase;
             font-weight: 600;
             margin-bottom: 2mm;
         }
+
         .main-title {
             font-family: 'Playfair Display', serif;
-            font-size: 24pt;
+            font-size: 22pt;
             color: var(--navy);
-            margin: 0;
             letter-spacing: 2px;
+            text-transform: uppercase;
             font-weight: 700;
+            margin-bottom: 3mm;
         }
+
         .title-accent-line {
-            width: 80mm;
-            height: 1.5px;
-            background: var(--blue);
-            margin: 4mm auto 0;
-            opacity: 0.7;
+            width: 60mm;
+            height: 1px;
+            background-color: var(--blue);
+            margin: 0 auto;
+            opacity: 0.5;
         }
 
         /* Body Content */
@@ -164,7 +167,7 @@
 
         .greeting {
             text-align: center;
-            font-size: 11pt;
+            font-size: 10pt;
             font-weight: 600;
             color: var(--navy);
             letter-spacing: 1px;
@@ -174,7 +177,7 @@
         /* Structured Fill-in Fields */
         .text-line {
             text-align: center;
-            font-size: 10pt;
+            font-size: 9.5pt;
             color: var(--gray);
             margin-bottom: 3mm;
         }
@@ -194,7 +197,7 @@
             font-weight: 500;
             color: var(--navy);
             margin-right: 2mm;
-            font-size: 10pt;
+            font-size: 9.5pt;
             white-space: nowrap;
         }
         .field-blank {
@@ -215,7 +218,7 @@
             text-align: center;
             font-weight: 600;
             color: var(--navy);
-            font-size: 10pt;
+            font-size: 9.5pt;
             margin-bottom: 4mm;
         }
 
@@ -237,7 +240,7 @@
             margin-top: 2mm;
         }
         .paragraphs p {
-            font-size: 9.5pt;
+            font-size: 9pt;
             line-height: 1.7;
             color: var(--gray);
             margin: 0 0 3mm 0;
@@ -251,7 +254,7 @@
             justify-content: space-between;
             align-items: flex-end;
             margin-top: auto;
-            padding: 0 10mm;
+            padding: 0 5mm;
         }
 
         .sig-block {
@@ -268,12 +271,14 @@
         }
         .sig-role {
             font-weight: 600;
-            font-size: 9pt;
+            font-size: 8pt;
             color: var(--navy);
             margin-bottom: 3mm;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .sig-detail-group {
-            font-size: 8.5pt;
+            font-size: 8pt;
             color: var(--gray);
             line-height: 1.8;
         }
@@ -295,7 +300,7 @@
         .host-org {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
-            font-size: 10.5pt;
+            font-size: 10pt;
             color: var(--navy);
         }
 
@@ -304,26 +309,28 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 32mm;
-            height: 32mm;
-            border: 1.2px dashed var(--blue);
+            width: 28mm;
+            height: 28mm;
+            border: 0.5px solid var(--blue);
             border-radius: 50%;
             opacity: 0.6;
             margin: 0 10mm;
+            background: rgba(30, 101, 243, 0.02);
         }
         .stamp-text {
-            font-size: 7.5pt;
+            font-size: 6.5pt;
             color: var(--blue);
             font-weight: 600;
             text-align: center;
             letter-spacing: 0.5px;
             padding: 2mm;
+            text-transform: uppercase;
         }
 
         /* Subtle Footer Border */
         .bottom-accent {
             text-align: center;
-            margin-top: 5mm;
+            margin-top: 4mm;
         }
         .bottom-line {
             width: 20mm;
@@ -333,13 +340,18 @@
             opacity: 0.4;
         }
 
-        /* Print Specifics */
+                /* Print Specifics */
+        @page {
+            size: A4 landscape;
+            margin: 0;
+        }
         @media print {
             body { background: none; min-height: auto; }
             .certificate-container {
                 box-shadow: none;
                 width: 100%;
                 height: 100vh;
+                margin: 0;
             }
         }
     </style>
@@ -349,8 +361,8 @@
     <div class="certificate-container">
         <!-- Minimal Geometric Background -->
         <div class="bg-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
+            <div class="bubble-shape bubble-1"></div>
+            <div class="bubble-shape bubble-2"></div>
         </div>
 
         <!-- Elegant Borders -->
@@ -470,7 +482,7 @@
 
                 <!-- Center: Stamp -->
                 <div class="stamp-block">
-                    <div class="stamp-text">OFFICIAL STAMP / SEAL</div>
+                    <div class="stamp-text">OFFICIAL<br>STAMP / SEAL</div>
                 </div>
 
                 <!-- Right: Organization -->
