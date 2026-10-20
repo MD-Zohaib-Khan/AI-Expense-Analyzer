@@ -65,15 +65,16 @@
         .shape {
             position: absolute;
             border: 1px solid rgba(30, 101, 243, 0.04);
-            border-radius: 50%;
         }
         .shape-1 {
             width: 180mm; height: 180mm;
             top: -60mm; left: -60mm;
+            border-radius: 50% 50% 50% 10%;
         }
         .shape-2 {
             width: 220mm; height: 220mm;
             bottom: -100mm; right: -80mm;
+            border-radius: 50% 50% 10% 50%;
         }
 
         /* Elegant Double Border */
@@ -110,37 +111,37 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            padding: 8mm 15mm;
+            padding: 10mm 15mm;
         }
 
         /* Header / Logo */
         .header {
             text-align: center;
-            margin-bottom: 2mm;
+            margin-bottom: 1mm;
         }
         .logo-placeholder {
-            max-height: 20mm;
+            max-height: 14mm;
             max-width: 60mm;
             object-fit: contain;
-            margin-bottom: 2mm;
+            margin-bottom: 1mm;
         }
 
         /* Titles */
         .title-section {
             text-align: center;
-            margin-bottom: 4mm;
+            margin-bottom: 1mm;
         }
         .subtitle {
-            font-size: 8.5pt;
+            font-size: 8pt;
             letter-spacing: 3px;
             color: var(--blue);
             text-transform: uppercase;
             font-weight: 600;
-            margin-bottom: 2mm;
+            margin-bottom: 1.5mm;
         }
         .main-title {
             font-family: 'Playfair Display', serif;
-            font-size: 24pt;
+            font-size: 20pt;
             color: var(--navy);
             margin: 0;
             letter-spacing: 2px;
@@ -150,7 +151,7 @@
             width: 80mm;
             height: 1.5px;
             background: var(--blue);
-            margin: 4mm auto 0;
+            margin: 2mm auto 0;
             opacity: 0.7;
         }
 
@@ -164,11 +165,11 @@
 
         .greeting {
             text-align: center;
-            font-size: 11pt;
+            font-size: 10.5pt;
             font-weight: 600;
             color: var(--navy);
             letter-spacing: 1px;
-            margin-bottom: 5mm;
+            margin-bottom: 2mm;
         }
 
         /* Structured Fill-in Fields */
@@ -176,7 +177,7 @@
             text-align: center;
             font-size: 10pt;
             color: var(--gray);
-            margin-bottom: 3mm;
+            margin-bottom: 2mm;
         }
 
         .fields-container {
@@ -184,7 +185,7 @@
             justify-content: center;
             align-items: flex-end;
             gap: 5mm;
-            margin-bottom: 4mm;
+            margin-bottom: 3mm;
         }
         .field-group {
             display: flex;
@@ -204,7 +205,11 @@
         }
 
         /* Specific Blank Widths */
-        .name-blank { width: 70mm; }
+        .name-group .field-label {
+            font-size: 11pt;
+            font-weight: 600;
+        }
+        .name-blank { width: 70mm; border-bottom: 1.5px solid var(--navy); }
         .reg-blank { width: 40mm; }
         .sem-blank { width: 25mm; }
         .prog-blank { width: 35mm; }
@@ -216,12 +221,12 @@
             font-weight: 600;
             color: var(--navy);
             font-size: 10pt;
-            margin-bottom: 4mm;
+            margin-bottom: 3mm;
         }
 
         .internship-period {
             text-align: center;
-            margin: 4mm 0;
+            margin: 2mm 0;
         }
         .period-title {
             font-size: 8pt;
@@ -234,13 +239,13 @@
 
         /* Paragraphs */
         .paragraphs {
-            margin-top: 2mm;
+            margin-top: 1mm;
         }
         .paragraphs p {
-            font-size: 9.5pt;
-            line-height: 1.7;
+            font-size: 10pt;
+            line-height: 1.8;
             color: var(--gray);
-            margin: 0 0 3mm 0;
+            margin: 0 0 2mm 0;
             text-align: justify;
             text-align-last: center;
         }
@@ -323,7 +328,7 @@
         /* Subtle Footer Border */
         .bottom-accent {
             text-align: center;
-            margin-top: 5mm;
+            margin-top: 3mm;
         }
         .bottom-line {
             width: 20mm;
@@ -387,7 +392,7 @@
                 <div class="text-line">This is to certify that</div>
 
                 <div class="fields-container">
-                    <div class="field-group">
+                    <div class="field-group name-group">
                         <span class="field-label">Mr./Ms.</span>
                         <span class="field-blank name-blank"></span>
                     </div>
