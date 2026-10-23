@@ -53,6 +53,7 @@
             padding: 12mm;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             overflow: hidden;
+            box-sizing: border-box;
         }
 
         /* Extremely Subtle Geometric Background */
@@ -111,24 +112,25 @@
             display: flex;
             flex-direction: column;
             padding: 8mm 15mm;
+            box-sizing: border-box;
         }
 
         /* Header / Logo */
         .header {
             text-align: center;
-            margin-bottom: 2mm;
+            margin-bottom: 0mm;
         }
         .logo-placeholder {
-            max-height: 20mm;
-            max-width: 60mm;
+            max-height: 15mm;
+            max-width: 50mm;
             object-fit: contain;
-            margin-bottom: 2mm;
+            margin-bottom: 0mm;
         }
 
         /* Titles */
         .title-section {
             text-align: center;
-            margin-bottom: 4mm;
+            margin-bottom: 0mm;
         }
         .subtitle {
             font-size: 8.5pt;
@@ -140,7 +142,7 @@
         }
         .main-title {
             font-family: 'Playfair Display', serif;
-            font-size: 24pt;
+            font-size: 20pt;
             color: var(--navy);
             margin: 0;
             letter-spacing: 2px;
@@ -168,7 +170,7 @@
             font-weight: 600;
             color: var(--navy);
             letter-spacing: 1px;
-            margin-bottom: 5mm;
+            margin-bottom: 3mm;
         }
 
         /* Structured Fill-in Fields */
@@ -184,7 +186,7 @@
             justify-content: center;
             align-items: flex-end;
             gap: 5mm;
-            margin-bottom: 4mm;
+            margin-bottom: 2mm;
         }
         .field-group {
             display: flex;
@@ -216,12 +218,12 @@
             font-weight: 600;
             color: var(--navy);
             font-size: 10pt;
-            margin-bottom: 4mm;
+            margin-bottom: 2mm;
         }
 
         .internship-period {
             text-align: center;
-            margin: 4mm 0;
+            margin: 2mm 0;
         }
         .period-title {
             font-size: 8pt;
@@ -234,13 +236,13 @@
 
         /* Paragraphs */
         .paragraphs {
-            margin-top: 2mm;
+            margin-top: 1mm;
         }
         .paragraphs p {
-            font-size: 9.5pt;
-            line-height: 1.7;
+            font-size: 9pt;
+            line-height: 1.5;
             color: var(--gray);
-            margin: 0 0 3mm 0;
+            margin: 0 0 1.5mm 0;
             text-align: justify;
             text-align-last: center;
         }
@@ -304,8 +306,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 32mm;
-            height: 32mm;
+            width: 28mm;
+            height: 28mm;
             border: 1.2px dashed var(--blue);
             border-radius: 50%;
             opacity: 0.6;
@@ -323,7 +325,7 @@
         /* Subtle Footer Border */
         .bottom-accent {
             text-align: center;
-            margin-top: 5mm;
+            margin-top: 2mm;
         }
         .bottom-line {
             width: 20mm;
@@ -374,7 +376,7 @@
 
             <!-- Title -->
             <div class="title-section">
-                <div class="subtitle">Certificate of Achievement</div>
+                <div class="subtitle">CERTIFICATE OF ACHIEVEMENT</div>
                 <h1 class="main-title">INTERNSHIP COMPLETION CERTIFICATE</h1>
                 <div class="title-accent-line"></div>
             </div>
@@ -449,21 +451,21 @@
             <!-- Footer / Signatures -->
             <div class="footer-section">
                 <!-- Left: Supervisor -->
-                <div class="sig-block">
+                <div class="sig-block" style="width: 70mm;">
                     <div class="sig-line"></div>
                     <div class="sig-role">Authorized Officer / Supervisor</div>
                     <div class="sig-detail-group">
                         <div class="sig-detail">
-                            <span class="detail-label">Name:</span>
-                            <span class="detail-blank"></span>
+                            <span class="detail-label" style="width: auto;">Name of Authorized Officer/Supervisor:</span>
+                            <span class="detail-blank" style="margin-left: 2mm;"></span>
                         </div>
-                        <div class="sig-detail">
-                            <span class="detail-label">Designation:</span>
-                            <span class="detail-blank"></span>
+                        <div class="sig-detail" style="margin-top: 1mm;">
+                            <span class="detail-label" style="width: auto;">Designation:</span>
+                            <span class="detail-blank" style="margin-left: 2mm;"></span>
                         </div>
                         <div class="sig-detail mt-2">
-                            <span class="detail-label">Date of Issue:</span>
-                            <span class="detail-blank"></span>
+                            <span class="detail-label" style="width: auto;">Date of Issue:</span>
+                            <span class="detail-blank" style="margin-left: 2mm;"></span>
                         </div>
                     </div>
                 </div>
