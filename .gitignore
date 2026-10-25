@@ -1,0 +1,9 @@
+node_modules/
+package-lock.json
+package.json
+temp_auto_push.bat
+test_print.js
+certificate.png
+videos/
+.gitignore
+branch_structure.json
