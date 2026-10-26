@@ -65,15 +65,17 @@
         .shape {
             position: absolute;
             border: 1px solid rgba(30, 101, 243, 0.04);
-            border-radius: 50%;
+            border-radius: 50% 50% 50% 0;
         }
         .shape-1 {
             width: 180mm; height: 180mm;
             top: -60mm; left: -60mm;
+            transform: rotate(-15deg);
         }
         .shape-2 {
             width: 220mm; height: 220mm;
             bottom: -100mm; right: -80mm;
+            transform: rotate(165deg);
         }
 
         /* Elegant Double Border */
@@ -86,7 +88,7 @@
         }
         .border-inner {
             position: absolute;
-            top: 2.5mm; left: 2.5mm; right: 2.5mm; bottom: 2.5mm;
+            top: 3mm; left: 3mm; right: 3mm; bottom: 3mm;
             border: 0.75px solid var(--blue);
             opacity: 0.6;
         }
@@ -110,25 +112,25 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            padding: 8mm 15mm;
+            padding: 2mm 15mm;
         }
 
         /* Header / Logo */
         .header {
             text-align: center;
-            margin-bottom: 2mm;
+            margin-bottom: 1mm;
         }
         .logo-placeholder {
             max-height: 20mm;
             max-width: 60mm;
             object-fit: contain;
-            margin-bottom: 2mm;
+            margin-bottom: 1mm;
         }
 
         /* Titles */
         .title-section {
             text-align: center;
-            margin-bottom: 4mm;
+            margin-bottom: 0mm;
         }
         .subtitle {
             font-size: 8.5pt;
@@ -136,7 +138,7 @@
             color: var(--blue);
             text-transform: uppercase;
             font-weight: 600;
-            margin-bottom: 2mm;
+            margin-bottom: 1mm;
         }
         .main-title {
             font-family: 'Playfair Display', serif;
@@ -168,7 +170,7 @@
             font-weight: 600;
             color: var(--navy);
             letter-spacing: 1px;
-            margin-bottom: 5mm;
+            margin-bottom: 3mm;
         }
 
         /* Structured Fill-in Fields */
@@ -184,7 +186,7 @@
             justify-content: center;
             align-items: flex-end;
             gap: 5mm;
-            margin-bottom: 4mm;
+            margin-bottom: 1mm;
         }
         .field-group {
             display: flex;
@@ -216,12 +218,12 @@
             font-weight: 600;
             color: var(--navy);
             font-size: 10pt;
-            margin-bottom: 4mm;
+            margin-bottom: 1mm;
         }
 
         .internship-period {
             text-align: center;
-            margin: 4mm 0;
+            margin: 2mm 0;
         }
         .period-title {
             font-size: 8pt;
@@ -237,10 +239,10 @@
             margin-top: 2mm;
         }
         .paragraphs p {
-            font-size: 9.5pt;
-            line-height: 1.7;
+            font-size: 10pt;
+            line-height: 1.8;
             color: var(--gray);
-            margin: 0 0 3mm 0;
+            margin: 0 0 2mm 0;
             text-align: justify;
             text-align-last: center;
         }
@@ -263,7 +265,7 @@
         }
         .sig-line {
             border-bottom: 1px solid var(--navy);
-            margin-bottom: 2mm;
+            margin-bottom: 1mm;
             width: 100%;
         }
         .sig-role {
@@ -304,12 +306,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 32mm;
-            height: 32mm;
+            width: 40mm;
+            height: 40mm;
             border: 1.2px dashed var(--blue);
             border-radius: 50%;
             opacity: 0.6;
-            margin: 0 10mm;
+            margin: 0 10mm 4mm 10mm;
         }
         .stamp-text {
             font-size: 7.5pt;
@@ -323,7 +325,7 @@
         /* Subtle Footer Border */
         .bottom-accent {
             text-align: center;
-            margin-top: 5mm;
+            margin-top: 0;
         }
         .bottom-line {
             width: 20mm;
@@ -483,6 +485,7 @@
 
             <div class="bottom-accent">
                 <div class="bottom-line"></div>
+                <div style="font-size: 8pt; color: var(--gray); margin-top: 2mm;">LiveTalk Software House - Internship Completion Certificate</div>
             </div>
 
         </div>
