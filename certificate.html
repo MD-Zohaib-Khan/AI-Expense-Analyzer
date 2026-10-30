@@ -53,9 +53,10 @@
             padding: 12mm;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             overflow: hidden;
+            box-sizing: border-box;
         }
 
-        /* Extremely Subtle Geometric Background */
+        /* Extremely Subtle Geometric Background - Speech Bubble Inspired */
         .bg-shapes {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -64,16 +65,30 @@
         }
         .shape {
             position: absolute;
-            border: 1px solid rgba(30, 101, 243, 0.04);
-            border-radius: 50%;
+            border: 1px solid rgba(30, 101, 243, 0.05);
+            background: rgba(30, 101, 243, 0.01);
         }
+        /* Top Left Bubble with tail pointing right */
         .shape-1 {
-            width: 180mm; height: 180mm;
-            top: -60mm; left: -60mm;
+            width: 160mm; height: 160mm;
+            top: -50mm; left: -40mm;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-15deg);
         }
+        /* Bottom Right Bubble with tail pointing left */
         .shape-2 {
-            width: 220mm; height: 220mm;
-            bottom: -100mm; right: -80mm;
+            width: 200mm; height: 200mm;
+            bottom: -80mm; right: -50mm;
+            border-radius: 50% 50% 0 50%;
+            transform: rotate(15deg);
+        }
+        /* Small accent bubble */
+        .shape-3 {
+            width: 40mm; height: 40mm;
+            top: 20mm; right: 40mm;
+            border-radius: 50% 50% 50% 0;
+            opacity: 0.5;
+            border: 1px solid rgba(30, 101, 243, 0.08);
         }
 
         /* Elegant Double Border */
@@ -83,12 +98,14 @@
             border: 1.5px solid var(--navy);
             z-index: 2;
             pointer-events: none;
+            box-sizing: border-box;
         }
         .border-inner {
             position: absolute;
             top: 2.5mm; left: 2.5mm; right: 2.5mm; bottom: 2.5mm;
             border: 0.75px solid var(--blue);
             opacity: 0.6;
+            box-sizing: border-box;
         }
 
         /* Subtle Geometric Corners */
@@ -110,7 +127,8 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            padding: 8mm 15mm;
+            padding: 4mm 10mm;
+            box-sizing: border-box;
         }
 
         /* Header / Logo */
@@ -119,28 +137,28 @@
             margin-bottom: 2mm;
         }
         .logo-placeholder {
-            max-height: 20mm;
+            max-height: 18mm;
             max-width: 60mm;
             object-fit: contain;
-            margin-bottom: 2mm;
+            margin-bottom: 0mm;
         }
 
         /* Titles */
         .title-section {
             text-align: center;
-            margin-bottom: 4mm;
+            margin-bottom: 3mm;
         }
         .subtitle {
-            font-size: 8.5pt;
+            font-size: 8pt;
             letter-spacing: 3px;
             color: var(--blue);
             text-transform: uppercase;
             font-weight: 600;
-            margin-bottom: 2mm;
+            margin-bottom: 1.5mm;
         }
         .main-title {
             font-family: 'Playfair Display', serif;
-            font-size: 24pt;
+            font-size: 22pt;
             color: var(--navy);
             margin: 0;
             letter-spacing: 2px;
@@ -148,9 +166,9 @@
         }
         .title-accent-line {
             width: 80mm;
-            height: 1.5px;
+            height: 1px;
             background: var(--blue);
-            margin: 4mm auto 0;
+            margin: 3mm auto 0;
             opacity: 0.7;
         }
 
@@ -164,27 +182,27 @@
 
         .greeting {
             text-align: center;
-            font-size: 11pt;
+            font-size: 10pt;
             font-weight: 600;
             color: var(--navy);
             letter-spacing: 1px;
-            margin-bottom: 5mm;
+            margin-bottom: 4mm;
         }
 
         /* Structured Fill-in Fields */
         .text-line {
             text-align: center;
-            font-size: 10pt;
+            font-size: 9.5pt;
             color: var(--gray);
-            margin-bottom: 3mm;
+            margin-bottom: 2.5mm;
         }
 
         .fields-container {
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            gap: 5mm;
-            margin-bottom: 4mm;
+            gap: 4mm;
+            margin-bottom: 3mm;
         }
         .field-group {
             display: flex;
@@ -194,17 +212,17 @@
             font-weight: 500;
             color: var(--navy);
             margin-right: 2mm;
-            font-size: 10pt;
+            font-size: 9.5pt;
             white-space: nowrap;
         }
         .field-blank {
             border-bottom: 1px solid var(--gray);
-            height: 5mm;
+            height: 4.5mm;
             display: inline-block;
         }
 
         /* Specific Blank Widths */
-        .name-blank { width: 70mm; }
+        .name-blank { width: 75mm; }
         .reg-blank { width: 40mm; }
         .sem-blank { width: 25mm; }
         .prog-blank { width: 35mm; }
@@ -215,13 +233,13 @@
             text-align: center;
             font-weight: 600;
             color: var(--navy);
-            font-size: 10pt;
-            margin-bottom: 4mm;
+            font-size: 9.5pt;
+            margin-bottom: 3.5mm;
         }
 
         .internship-period {
             text-align: center;
-            margin: 4mm 0;
+            margin: 3.5mm 0;
         }
         .period-title {
             font-size: 8pt;
@@ -234,13 +252,14 @@
 
         /* Paragraphs */
         .paragraphs {
-            margin-top: 2mm;
+            margin-top: 1.5mm;
+            padding: 0 5mm;
         }
         .paragraphs p {
-            font-size: 9.5pt;
-            line-height: 1.7;
+            font-size: 9pt;
+            line-height: 1.8;
             color: var(--gray);
-            margin: 0 0 3mm 0;
+            margin: 0 0 2.5mm 0;
             text-align: justify;
             text-align-last: center;
         }
@@ -252,10 +271,11 @@
             align-items: flex-end;
             margin-top: auto;
             padding: 0 10mm;
+            margin-bottom: 2mm;
         }
 
         .sig-block {
-            width: 55mm;
+            width: 60mm;
             text-align: left;
         }
         .sig-block.right {
@@ -270,7 +290,7 @@
             font-weight: 600;
             font-size: 9pt;
             color: var(--navy);
-            margin-bottom: 3mm;
+            margin-bottom: 2.5mm;
         }
         .sig-detail-group {
             font-size: 8.5pt;
@@ -283,19 +303,19 @@
         }
         .detail-label {
             margin-right: 2mm;
-            width: 26mm;
+            width: 28mm;
         }
         .detail-blank {
             flex-grow: 1;
             border-bottom: 1px solid #cbd5e1;
             height: 4mm;
         }
-        .mt-2 { margin-top: 2mm; }
+        .mt-2 { margin-top: 1.5mm; }
 
         .host-org {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
-            font-size: 10.5pt;
+            font-size: 10pt;
             color: var(--navy);
         }
 
@@ -304,15 +324,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 32mm;
-            height: 32mm;
+            width: 30mm;
+            height: 30mm;
             border: 1.2px dashed var(--blue);
             border-radius: 50%;
             opacity: 0.6;
-            margin: 0 10mm;
+            margin: 0 5mm;
         }
         .stamp-text {
-            font-size: 7.5pt;
+            font-size: 7pt;
             color: var(--blue);
             font-weight: 600;
             text-align: center;
@@ -323,14 +343,21 @@
         /* Subtle Footer Border */
         .bottom-accent {
             text-align: center;
-            margin-top: 5mm;
+            margin-top: 3mm;
+            padding-bottom: 1mm;
         }
         .bottom-line {
-            width: 20mm;
+            width: 25mm;
             height: 1px;
             background: var(--blue);
-            margin: 0 auto;
+            margin: 0 auto 1.5mm auto;
             opacity: 0.4;
+        }
+        .bottom-text {
+            font-size: 7pt;
+            color: var(--gray);
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         /* Print Specifics */
@@ -340,6 +367,7 @@
                 box-shadow: none;
                 width: 100%;
                 height: 100vh;
+                margin: 0;
             }
         }
     </style>
@@ -351,6 +379,7 @@
         <div class="bg-shapes">
             <div class="shape shape-1"></div>
             <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
         </div>
 
         <!-- Elegant Borders -->
@@ -367,8 +396,7 @@
 
             <!-- Header -->
             <div class="header">
-                <!-- IMPORTANT: Replace the 'src' below with your actual logo file path -->
-                <!-- e.g. src="livetalk-logo.png" -->
+                <!-- LiveTalk Logo -->
                 <img src="https://via.placeholder.com/300x100/ffffff/0B1B3D?text=[+INSERT+LIVETALK+LOGO+HERE+]" alt="LiveTalk Software House Logo" class="logo-placeholder">
             </div>
 
@@ -483,6 +511,7 @@
 
             <div class="bottom-accent">
                 <div class="bottom-line"></div>
+                <div class="bottom-text">LiveTalk Software House &bull; Internship Completion Certificate</div>
             </div>
 
         </div>

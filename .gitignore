@@ -1,0 +1,10 @@
+node_modules/
+package.json
+package-lock.json
+temp_auto_push.bat
+playwright-report/
+test-results/
+screenshot.png
+screenshot.js
+.gitignore
+branch_structure.json
